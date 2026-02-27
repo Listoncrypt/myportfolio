@@ -1,20 +1,36 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Uchenna Ebube | Portfolio
 
-# Run and deploy your AI Studio app
+Welcome to the source code for my personal portfolio website.
 
-This contains everything you need to run your app locally.
+## 🚀 Live Demo
+[View Live Site](https://myportfolio-listoncrypt.vercel.app/) *(Update this link to your actual Vercel domain if different)*
 
-View your app in AI Studio: https://ai.studio/apps/85f88540-1586-4541-8300-bb132afefffe
+## 🛠️ Tech Stack
+- **React** 19
+- **TypeScript**
+- **Vite**
+- **Tailwind CSS** v4
+- **Motion** (Framer Motion)
+- **Lucide React** for Icons
 
-## Run Locally
+## 💻 Running Locally
 
-**Prerequisites:**  Node.js
+1. Clone the repository
+   ```bash
+   git clone https://github.com/Listoncrypt/myportfolio.git
+   ```
 
+2. Install dependencies
+   ```bash
+   npm install
+   ```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+3. Run the development server
+   ```bash
+   npm run dev
+   ```
+
+## 🏗️ Building for Production
+```bash
+npm run build
+```
