@@ -12,14 +12,90 @@ import {
   X,
   Terminal as TerminalIcon
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, ReactNode } from "react";
 import Resume from "./components/Resume";
 import Terminal from "./components/Terminal";
+
+interface ShelfItem {
+  name: string;
+  type: string;
+  category: "Languages" | "Frameworks" | "Cloud & DevOps" | "Data & Security" | "Books";
+  icon: ReactNode;
+}
+
+const shelfCategories = ["All", "Languages", "Frameworks", "Cloud & DevOps", "Data & Security", "Books"] as const;
+
+const shelfItems: ShelfItem[] = [
+  // --- Languages (from screenshot) ---
+  { name: "TypeScript", type: "Language", category: "Languages", icon: <span className="font-mono font-black text-sky-400">TS</span> },
+  { name: "Rust", type: "Language", category: "Languages", icon: "🦀" },
+  { name: "JavaScript", type: "Language", category: "Languages", icon: <span className="font-mono font-black text-amber-300">JS</span> },
+  { name: "Go", type: "Language", category: "Languages", icon: <span className="font-mono font-black text-cyan-400">GO</span> },
+  { name: "Java", type: "Language", category: "Languages", icon: "☕" },
+  { name: "Python", type: "Language", category: "Languages", icon: "🐍" },
+  { name: "Bash Script", type: "Language", category: "Languages", icon: <span className="font-mono font-black text-emerald-400">$_</span> },
+  { name: "Solidity", type: "Language", category: "Languages", icon: "💎" },
+  { name: "Swift", type: "Mobile (iOS)", category: "Languages", icon: "🦅" },
+  { name: "Objective-C", type: "Mobile (iOS)", category: "Languages", icon: <span className="font-mono font-black text-amber-500">ObjC</span> },
+  { name: "Kotlin", type: "Mobile (Android)", category: "Languages", icon: <span className="font-mono font-black text-purple-400">KT</span> },
+  { name: "Dart", type: "Mobile (Flutter)", category: "Languages", icon: <span className="font-mono font-black text-cyan-500">🎯</span> },
+  { name: "PHP", type: "Language", category: "Languages", icon: <span className="font-mono font-black text-indigo-400">PHP</span> },
+  { name: "Ruby", type: "Language", category: "Languages", icon: <span className="font-mono font-black text-red-500">◆</span> },
+  { name: "C", type: "Language", category: "Languages", icon: <span className="font-mono font-black text-blue-500">C</span> },
+  { name: "HTML5", type: "Markup", category: "Languages", icon: <span className="font-mono font-black text-orange-500">&lt;/&gt;</span> },
+  { name: "GraphQL", type: "Query Language", category: "Languages", icon: "◈" },
+  { name: "SQL", type: "Query Language", category: "Languages", icon: "🗄️" },
+
+  // --- Frameworks & Libraries (from screenshot) ---
+  { name: "React", type: "Frontend Library", category: "Frameworks", icon: "⚛️" },
+  { name: "React Native", type: "Mobile Framework", category: "Frameworks", icon: "📱" },
+  { name: "Django", type: "Web Framework", category: "Frameworks", icon: <span className="font-mono font-black text-emerald-600">DJ</span> },
+  { name: "FastAPI", type: "API Framework", category: "Frameworks", icon: "⚡" },
+  { name: "Flask", type: "Microframework", category: "Frameworks", icon: "🧪" },
+  { name: "NestJS", type: "Node Framework", category: "Frameworks", icon: "🦁" },
+  { name: "Angular", type: "Web Framework", category: "Frameworks", icon: "🅰️" },
+  { name: "SolidJS", type: "Reactive UI", category: "Frameworks", icon: "🔷" },
+  { name: "Flutter", type: "Cross-Platform", category: "Frameworks", icon: "💙" },
+  { name: "Electron", type: "Desktop Apps", category: "Frameworks", icon: "⚛" },
+  { name: "Gatsby", type: "Static Generator", category: "Frameworks", icon: "🟣" },
+  { name: "Vue / Vuetify", type: "UI Framework", category: "Frameworks", icon: "🟢" },
+
+  // --- Cloud & DevOps (from screenshot) ---
+  { name: "Docker", type: "Containers", category: "Cloud & DevOps", icon: "🐳" },
+  { name: "AWS", type: "Cloud Provider", category: "Cloud & DevOps", icon: "☁️" },
+  { name: "Azure", type: "Cloud Provider", category: "Cloud & DevOps", icon: "🔷" },
+  { name: "Google Cloud", type: "Cloud Platform", category: "Cloud & DevOps", icon: "☁️" },
+  { name: "Cloudflare", type: "CDN & Edge Security", category: "Cloud & DevOps", icon: "🟧" },
+  { name: "Vercel", type: "Edge Deployment", category: "Cloud & DevOps", icon: "▲" },
+  { name: "Netlify", type: "Web Hosting", category: "Cloud & DevOps", icon: "💎" },
+  { name: "Nginx", type: "Reverse Proxy", category: "Cloud & DevOps", icon: "🟩" },
+  { name: "Render", type: "Cloud Hosting", category: "Cloud & DevOps", icon: "🚀" },
+  { name: "Heroku", type: "Cloud PaaS", category: "Cloud & DevOps", icon: "🟣" },
+
+  // --- Databases, Data & Security (from screenshot & profile) ---
+  { name: "PostgreSQL", type: "Relational Database", category: "Data & Security", icon: "🐘" },
+  { name: "SQLite", type: "Embedded DB", category: "Data & Security", icon: "💾" },
+  { name: "Supabase", type: "Backend & Postgres", category: "Data & Security", icon: "⚡" },
+  { name: "Prisma", type: "Type-Safe ORM", category: "Data & Security", icon: "◬" },
+  { name: "Kali Linux", type: "Security OS", category: "Data & Security", icon: "🐉" },
+  { name: "OSCP", type: "Security Cert", category: "Data & Security", icon: "🛡️" },
+  { name: "Splunk", type: "SIEM & Analytics", category: "Data & Security", icon: "🔍" },
+  { name: "Apache Airflow", type: "Workflow Orchestration", category: "Data & Security", icon: "🌪️" },
+  { name: "Pandas", type: "Data Analysis", category: "Data & Security", icon: "🐼" },
+
+  // --- Books ---
+  { name: "Hacker's Handbook", type: "Security Book", category: "Books", icon: "📚" },
+  { name: "Clean Code", type: "Software Design Book", category: "Books", icon: "📖" },
+  { name: "Data-Intensive Apps", type: "Architecture Book", category: "Books", icon: "🏗️" },
+];
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTerminalOpen, setIsTerminalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState<"home" | "resume">("home");
+  const [selectedShelfCategory, setSelectedShelfCategory] = useState<string>("All");
+  const [isShelfExpanded, setIsShelfExpanded] = useState(false);
+  const INITIAL_SHELF_COUNT = 8;
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -46,8 +122,8 @@ export default function App() {
   }, []);
 
   const navLinks = [
-    { name: "My Work", href: "#work", type: "anchor" },
-    { name: "My Shelf", href: "#shelf", type: "anchor" },
+    { name: "What I Built", href: "#work", type: "anchor" },
+    { name: "The Craft", href: "#shelf", type: "anchor" },
     { name: "My Résumé", href: "#resume", type: "page" },
     { name: "Contact", href: "mailto:listoncrypt@gmail.com", type: "external" },
   ];
@@ -197,7 +273,7 @@ export default function App() {
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <h2 className="text-accent font-display font-medium uppercase tracking-[0.2em] text-sm mb-6">
-                    Full-Stack Engineer & Cybersecurity Analyst
+                    Full-Stack & Mobile Engineer (iOS & Android) | Cybersecurity Analyst
                   </h2>
                   <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] font-display font-extrabold leading-[0.9] tracking-tighter mb-12">
                     HEY, I'M <br />
@@ -214,7 +290,7 @@ export default function App() {
                 >
                   <div className="max-w-xl">
                     <p className="text-xl md:text-2xl text-fg/80 leading-relaxed font-light">
-                      I design and build complete systems — from secure backend architecture to responsive, high-performance frontend interfaces. I work comfortably across TypeScript, React, Python, and Django, building scalable APIs and intuitive user experiences. My cybersecurity background influences how I architect systems: security-first, resilient, and production-ready.
+                      I design and build complete systems — from secure backend architectures and responsive web interfaces to native and cross-platform mobile apps for iOS and Android using Swift, Objective-C, Flutter, and React Native. I work comfortably across TypeScript, React, Python, Django, and modern mobile platforms, building scalable APIs and intuitive, responsive user experiences. My cybersecurity background influences how I architect systems: security-first, resilient, and production-ready.
                     </p>
                   </div>
                   
@@ -246,7 +322,7 @@ export default function App() {
                 </div>
                 <div className="md:col-span-8 space-y-12">
                   <p className="text-2xl md:text-3xl leading-snug font-light">
-                    I am a <span className="text-accent font-medium">Full-Stack Engineer</span> and <span className="text-accent font-medium">Cybersecurity Analyst</span> who enjoys rapidly transforming ideas into functional products. I engineer clean, maintainable solutions from concept to deployment, ensuring every layer of the stack is optimized and secure.
+                    I am a <span className="text-accent font-medium">Full-Stack & Mobile Engineer</span> and <span className="text-accent font-medium">Cybersecurity Analyst</span> who enjoys rapidly transforming ideas into functional products. Whether architecting native mobile applications with <span className="text-accent font-medium">Swift</span>, <span className="text-accent font-medium">Objective-C</span>, and <span className="text-accent font-medium">Kotlin</span>, building cross-platform apps with <span className="text-accent font-medium">Flutter</span> and <span className="text-accent font-medium">React Native</span>, or engineering scalable backend infrastructure, I deliver clean, maintainable solutions from concept to deployment.
                   </p>
                   <p className="text-2xl md:text-3xl leading-snug font-light">
                     Currently, I serve as Lead Backend Developer at <span className="text-accent font-medium">Cyber Sentinel</span>, a security-focused project developing deepfake detection systems. I architect and maintain the core backend infrastructure using Django and Flask, ensuring scalability, secure authentication systems, encryption mechanisms, and real-time processing pipelines.
@@ -265,27 +341,37 @@ export default function App() {
                 <div className="flex justify-between items-end mb-20">
                   <div>
                     <h3 className="text-sm uppercase tracking-widest text-fg/40 font-bold mb-4">
-                      02. Selected Work
+                      02. What I Have Built
                     </h3>
-                    <h2 className="text-4xl md:text-6xl font-display font-extrabold tracking-tighter">
-                      CRAFTING <span className="text-stroke">DIGITAL</span> <br /> EXPERIENCES.
+                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold tracking-tighter">
+                      WHAT I HAVE <br />
+                      <span className="text-stroke">BUILT.</span>
                     </h2>
                   </div>
-                  <a href="#" className="hidden md:flex items-center gap-2 text-accent font-bold hover:underline">
-                    View all projects <ArrowRight size={16} />
+                  <a href="#shelf" className="hidden md:flex items-center gap-2 text-accent font-bold hover:underline">
+                    Explore the craft <ArrowRight size={16} />
                   </a>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {[
                     {
-                      title: "ConfirmEdit – Secure Escrow Platform",
+                      title: "Confirmedit.com – Secure Escrow Platform",
                       category: "Full-Stack Development",
                       description: "A solo-engineered escrow platform (confirmedit.com) designed for secure, transparent peer-to-peer transactions with automated dispute resolution.",
                       image: "https://i.postimg.cc/3Nf1Vms1/mockup-studio-image-3.png",
                       color: "bg-amber-500/10",
                       link: "https://confirmedit.com",
                       badges: ["AES-256", "JWT Auth", "Pen-Tested"]
+                    },
+                    {
+                      title: "Ungodly ACHV – Web3 Engagement & Rewards Platform",
+                      category: "Full-Stack Web3 Platform",
+                      description: "An automated social growth and reward platform (ungodlyachv.com) where users earn by engaging, commenting, and liking X (Twitter) posts, helping Web3 projects build organic audiences.",
+                      image: "/ungodlyachv.png",
+                      color: "bg-cyan-500/10",
+                      link: "https://www.ungodlyachv.com/",
+                      badges: ["Web3", "Social Rewards", "X API", "Organic Growth"]
                     },
                     {
                       title: "Cyber Sentinel – Deepfake Detection Infrastructure",
@@ -366,55 +452,111 @@ export default function App() {
                 </div>
               </section>
 
-              {/* Shelf Section */}
+              {/* Craft Section */}
               <section id="shelf" className="mt-40 border-t border-fg/10 pt-20">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
                   <div>
                     <h3 className="text-sm uppercase tracking-widest text-fg/40 font-bold mb-4">
-                      03. My Shelf
+                      03. Craft
                     </h3>
                     <h2 className="text-4xl md:text-6xl font-display font-extrabold tracking-tighter">
-                      THINGS I <span className="text-stroke">LOVE</span> <br /> & USE.
+                      THE <span className="text-stroke">CRAFT.</span> <br />
+                      THINGS I USE.
                     </h2>
                   </div>
                   <p className="max-w-md text-fg/60 text-lg">
-                    A curated collection of books, tools, and resources that have shaped my perspective on engineering and design.
+                    A curated collection of languages, frameworks, and tools that power my engineering workflow and cross-platform apps.
                   </p>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                  {[
-                    { name: "Python", type: "Language", icon: "🐍" },
-                    { name: "TypeScript", type: "Language", icon: "TS" },
-                    { name: "SQL", type: "Language", icon: "🗄️" },
-                    { name: "Django", type: "Framework", icon: "DJ" },
-                    { name: "FastAPI", type: "Framework", icon: "⚡" },
-                    { name: "Docker", type: "DevOps", icon: "🐳" },
-                    { name: "PostgreSQL", type: "Database", icon: "🐘" },
-                    { name: "OSCP", type: "Certification", icon: "🛡️" },
-                    { name: "Kali Linux", type: "Security Toolkit", icon: "🐉" },
-                    { name: "Hacker's Handbook", type: "Book", icon: "📚" },
-                    { name: "Clean Code", type: "Book", icon: "📖" },
-                    { name: "Data-Intensive Apps", type: "Book", icon: "🏗️" },
-                  ].map((item, i) => (
-                    <motion.div
-                      key={item.name}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.05 }}
-                      className="p-8 rounded-2xl border border-fg/5 bg-fg/[0.02] hover:bg-fg/[0.05] transition-colors group"
-                    >
-                      <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                        {item.icon}
-                      </div>
-                      <h4 className="font-bold text-lg mb-1">{item.name}</h4>
-                      <span className="text-xs uppercase tracking-widest opacity-40 font-bold">
-                        {item.type}
-                      </span>
-                    </motion.div>
-                  ))}
+                {/* Category Filter Tabs */}
+                <div className="flex flex-wrap gap-2 mb-10">
+                  {shelfCategories.map((category) => {
+                    const isSelected = selectedShelfCategory === category;
+                    const count = category === "All"
+                      ? shelfItems.length
+                      : shelfItems.filter((item) => item.category === category).length;
+                    return (
+                      <button
+                        key={category}
+                        onClick={() => {
+                          setSelectedShelfCategory(category);
+                          setIsShelfExpanded(false);
+                        }}
+                        className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 ${
+                          isSelected
+                            ? "bg-accent text-bg font-bold shadow-lg shadow-accent/20"
+                            : "bg-fg/5 text-fg/70 hover:bg-fg/10 hover:text-fg border border-fg/10"
+                        }`}
+                      >
+                        <span>{category}</span>
+                        <span className={`text-[10px] px-1.5 py-0.5 rounded-full ${
+                          isSelected ? "bg-bg/20 text-bg" : "bg-fg/10 text-fg/50"
+                        }`}>
+                          {count}
+                        </span>
+                      </button>
+                    );
+                  })}
                 </div>
+
+                {(() => {
+                  const filteredItems = selectedShelfCategory === "All"
+                    ? shelfItems
+                    : shelfItems.filter((item) => item.category === selectedShelfCategory);
+                  const displayedItems = isShelfExpanded
+                    ? filteredItems
+                    : filteredItems.slice(0, INITIAL_SHELF_COUNT);
+
+                  return (
+                    <>
+                      <motion.div layout className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                        <AnimatePresence mode="popLayout">
+                          {displayedItems.map((item) => (
+                            <motion.div
+                              layout
+                              key={item.name}
+                              initial={{ opacity: 0, scale: 0.9 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              exit={{ opacity: 0, scale: 0.9 }}
+                              transition={{ duration: 0.2 }}
+                              className="p-8 rounded-2xl border border-fg/5 bg-fg/[0.02] hover:bg-fg/[0.05] hover:border-accent/30 transition-all duration-300 group"
+                            >
+                              <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300 flex items-center h-10">
+                                {item.icon}
+                              </div>
+                              <h4 className="font-bold text-lg mb-1 group-hover:text-accent transition-colors">{item.name}</h4>
+                              <span className="text-xs uppercase tracking-widest opacity-40 font-bold">
+                                {item.type}
+                              </span>
+                            </motion.div>
+                          ))}
+                        </AnimatePresence>
+                      </motion.div>
+
+                      {filteredItems.length > INITIAL_SHELF_COUNT && (
+                        <div className="flex justify-center mt-12">
+                          <button
+                            onClick={() => setIsShelfExpanded(!isShelfExpanded)}
+                            className="px-8 py-3 rounded-full border border-fg/20 hover:border-accent bg-fg/5 hover:bg-accent hover:text-bg text-xs md:text-sm font-bold uppercase tracking-widest transition-all cursor-pointer flex items-center gap-2 group"
+                          >
+                            <span>
+                              {isShelfExpanded
+                                ? "Show Less"
+                                : `Show More (${filteredItems.length - INITIAL_SHELF_COUNT} more)`}
+                            </span>
+                            <ArrowRight
+                              size={16}
+                              className={`transition-transform duration-300 ${
+                                isShelfExpanded ? "-rotate-90" : "rotate-90 group-hover:translate-y-0.5"
+                              }`}
+                            />
+                          </button>
+                        </div>
+                      )}
+                    </>
+                  );
+                })()}
               </section>
 
               {/* Contact CTA */}

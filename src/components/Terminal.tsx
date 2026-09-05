@@ -9,9 +9,9 @@ interface TerminalProps {
 
 const COMMANDS: Record<string, string | (() => string)> = {
   help: 'Available commands: whoami, skills, projects, contact, clear, exit, date',
-  whoami: 'Uchenna Ebube David | Full-Stack Engineer & Cybersecurity Analyst. Building secure, scalable systems.',
-  skills: 'TypeScript, React, Python, Django, SQL, Go, Docker, PostgreSQL, Kali Linux, Metasploit, OSCP.',
-  projects: 'ConfirmEdit (Escrow), Cyber Sentinel (Deepfake Detection), Red Team Toolkit, Secure API Framework.',
+  whoami: 'Uchenna Ebube David | Full-Stack & Mobile Engineer (iOS & Android) & Cybersecurity Analyst. Building secure, scalable systems and native/cross-platform apps.',
+  skills: 'Swift, Objective-C, Kotlin, Flutter, Dart, React Native, TypeScript, JavaScript, Python, Rust, Go, Java, C, Solidity, PHP, Ruby, Bash, SQL, React, Django, FastAPI, Docker, PostgreSQL, Kali Linux, OSCP.',
+  projects: 'Confirmedit.com (Escrow), Ungodly ACHV (Social Rewards), Cyber Sentinel (Deepfake Detection), Red Team Toolkit, Secure API Framework.',
   contact: 'Email: listoncrypt@gmail.com | Telegram: t.me/listoncrypt',
   date: () => new Date().toLocaleString(),
   logs: () => {
