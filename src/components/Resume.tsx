@@ -52,7 +52,7 @@ export default function Resume({ onBack }: ResumeProps) {
                 UCHENNA <br /> EBUBE DAVID
               </h1>
               <p className="text-xl font-medium text-slate-500 uppercase tracking-widest">
-                Full-Stack & Mobile Engineer (iOS & Android) | Cybersecurity Analyst
+                Full-Stack & Mobile Engineer (iOS & Android) | Shopify Developer | Cybersecurity Analyst
               </p>
             </div>
             <div className="flex flex-col gap-2 text-sm font-medium text-slate-600">
@@ -72,7 +72,7 @@ export default function Resume({ onBack }: ResumeProps) {
         <section className="mb-12">
           <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-slate-400 mb-4">Professional Summary</h2>
           <p className="text-lg leading-relaxed text-slate-700">
-            I design and build complete systems — from secure backend architecture and high-performance web interfaces to native and cross-platform mobile apps for iOS and Android using Swift, Objective-C, Flutter, and React Native. I work comfortably across TypeScript, React, Flutter, Python, and Django, building scalable APIs and intuitive user experiences. My cybersecurity background influences how I architect systems: security-first, resilient, and production-ready. I enjoy rapidly transforming ideas into functional products and engineering clean, maintainable solutions from concept to deployment.
+            I design and build complete systems — from high-converting Shopify stores, custom themes, and e-commerce applications to secure backend architecture and native/cross-platform mobile apps for iOS and Android using Swift, Objective-C, Flutter, and React Native. I work comfortably across Liquid, TypeScript, React, Flutter, Python, and Django, building scalable APIs, seamless storefronts, and intuitive user experiences. My cybersecurity background influences how I architect systems: security-first, resilient, and production-ready. I enjoy rapidly transforming ideas into functional products and engineering clean, maintainable solutions from concept to deployment.
           </p>
         </section>
 
@@ -83,11 +83,11 @@ export default function Resume({ onBack }: ResumeProps) {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-xs font-bold uppercase text-slate-900 mb-2">Languages</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">Swift, Objective-C, Kotlin, Dart, Java, TypeScript, JavaScript, Python, Rust, Go, C, Solidity, PHP, Ruby, Bash, SQL, HTML5</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">Liquid, Swift, Objective-C, Kotlin, Dart, Java, TypeScript, JavaScript, Python, Rust, Go, C, Solidity, PHP, Ruby, Bash, SQL, HTML5</p>
                 </div>
                 <div>
-                  <h3 className="text-xs font-bold uppercase text-slate-900 mb-2">Mobile & Frontend</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">iOS (Swift / Objective-C), Android (Kotlin / Java), Flutter, React Native, React, TypeScript, Tailwind CSS</p>
+                  <h3 className="text-xs font-bold uppercase text-slate-900 mb-2">E-Commerce, Mobile & Frontend</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">Shopify (Liquid, Custom Themes, Storefront API, App Extensions), iOS (Swift / Objective-C), Android (Kotlin / Java), Flutter, React Native, React, TypeScript, Tailwind CSS</p>
                 </div>
                 <div>
                   <h3 className="text-xs font-bold uppercase text-slate-900 mb-2">Backend</h3>
@@ -111,6 +111,8 @@ export default function Resume({ onBack }: ResumeProps) {
             <section>
               <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-slate-400 mb-6">Competencies</h2>
               <ul className="text-sm text-slate-600 space-y-2">
+                <li>Shopify Theme & Custom Storefront Development</li>
+                <li>E-Commerce Optimization & Payment Integrations</li>
                 <li>iOS & Android App Development (Native & Cross-Platform)</li>
                 <li>Penetration Testing</li>
                 <li>Red Team Operations</li>

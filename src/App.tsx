@@ -27,8 +27,11 @@ const shelfCategories = ["All", "Languages", "Frameworks", "Cloud & DevOps", "Da
 
 const shelfItems: ShelfItem[] = [
   { name: "TypeScript", type: "Language", category: "Languages", icon: <span className="font-mono font-black text-sky-400">TS</span> },
+  { name: "Shopify", type: "E-Commerce & Liquid", category: "Frameworks", icon: "🛍️" },
+  { name: "React", type: "Frontend Library", category: "Frameworks", icon: "⚛️" },
   { name: "Rust", type: "Language", category: "Languages", icon: "🦀" },
   { name: "JavaScript", type: "Language", category: "Languages", icon: <span className="font-mono font-black text-amber-300">JS</span> },
+  { name: "Liquid", type: "Shopify Engine", category: "Languages", icon: <span className="font-mono font-black text-emerald-400">💧</span> },
   { name: "Go", type: "Language", category: "Languages", icon: <span className="font-mono font-black text-cyan-400">GO</span> },
   { name: "Java", type: "Language", category: "Languages", icon: "☕" },
   { name: "Python", type: "Language", category: "Languages", icon: "🐍" },
@@ -45,7 +48,6 @@ const shelfItems: ShelfItem[] = [
   { name: "GraphQL", type: "Query Language", category: "Languages", icon: "◈" },
   { name: "SQL", type: "Query Language", category: "Languages", icon: "🗄️" },
 
-  { name: "React", type: "Frontend Library", category: "Frameworks", icon: "⚛️" },
   { name: "React Native", type: "Mobile Framework", category: "Frameworks", icon: "📱" },
   { name: "Django", type: "Web Framework", category: "Frameworks", icon: <span className="font-mono font-black text-emerald-600">DJ</span> },
   { name: "FastAPI", type: "API Framework", category: "Frameworks", icon: "⚡" },
@@ -263,7 +265,7 @@ export default function App() {
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <h2 className="text-accent font-display font-medium uppercase tracking-[0.2em] text-sm mb-6">
-                    Full-Stack & Mobile Engineer (iOS & Android) | Cybersecurity Analyst
+                    Full-Stack & Mobile Engineer | Shopify Developer | Cybersecurity Analyst
                   </h2>
                   <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] font-display font-extrabold leading-[0.9] tracking-tighter mb-12">
                     HEY, I'M <br />
@@ -280,7 +282,7 @@ export default function App() {
                 >
                   <div className="max-w-xl">
                     <p className="text-xl md:text-2xl text-fg/80 leading-relaxed font-light">
-                      I design and build complete systems — from secure backend architectures and responsive web interfaces to native and cross-platform mobile apps for iOS and Android using Swift, Objective-C, Flutter, and React Native. I work comfortably across TypeScript, React, Python, Django, and modern mobile platforms, building scalable APIs and intuitive, responsive user experiences. My cybersecurity background influences how I architect systems: security-first, resilient, and production-ready.
+                      I design and build complete systems — from high-converting Shopify stores and custom Liquid themes to secure backend architectures, responsive web interfaces, and native/cross-platform mobile apps for iOS and Android using Swift, Objective-C, Flutter, and React Native. I work comfortably across TypeScript, React, Python, Django, Liquid, and modern mobile platforms, building scalable APIs, seamless storefronts, and intuitive user experiences.
                     </p>
                   </div>
                   
@@ -311,7 +313,7 @@ export default function App() {
                 </div>
                 <div className="md:col-span-8 space-y-12">
                   <p className="text-2xl md:text-3xl leading-snug font-light">
-                    I am a <span className="text-accent font-medium">Full-Stack & Mobile Engineer</span> and <span className="text-accent font-medium">Cybersecurity Analyst</span> who enjoys rapidly transforming ideas into functional products. Whether architecting native mobile applications with <span className="text-accent font-medium">Swift</span>, <span className="text-accent font-medium">Objective-C</span>, and <span className="text-accent font-medium">Kotlin</span>, building cross-platform apps with <span className="text-accent font-medium">Flutter</span> and <span className="text-accent font-medium">React Native</span>, or engineering scalable backend infrastructure, I deliver clean, maintainable solutions from concept to deployment.
+                    I am a <span className="text-accent font-medium">Full-Stack & Mobile Engineer</span>, <span className="text-accent font-medium">Shopify Developer</span>, and <span className="text-accent font-medium">Cybersecurity Analyst</span> who enjoys rapidly transforming ideas into functional products. Whether architecting high-converting Shopify storefronts and custom apps, native mobile applications with <span className="text-accent font-medium">Swift</span>, <span className="text-accent font-medium">Objective-C</span>, and <span className="text-accent font-medium">Kotlin</span>, building cross-platform apps with <span className="text-accent font-medium">Flutter</span> and <span className="text-accent font-medium">React Native</span>, or engineering scalable backend infrastructure, I deliver clean, maintainable solutions from concept to deployment.
                   </p>
                   <p className="text-2xl md:text-3xl leading-snug font-light">
                     Currently, I serve as Lead Backend Developer at <span className="text-accent font-medium">Cyber Sentinel</span>, a security-focused project developing deepfake detection systems. I architect and maintain the core backend infrastructure using Django and Flask, ensuring scalability, secure authentication systems, encryption mechanisms, and real-time processing pipelines.
