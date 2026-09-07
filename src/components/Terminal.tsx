@@ -79,7 +79,6 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
         exit={{ opacity: 0, scale: 0.9, y: 20 }}
         className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[100] bg-[#0c0c0c] border border-white/10 rounded-lg shadow-2xl overflow-hidden font-mono text-sm flex flex-col"
       >
-        {/* Header */}
         <div className="bg-white/5 px-4 py-2 flex justify-between items-center cursor-default select-none border-b border-white/5">
           <div className="flex items-center gap-2 opacity-60">
             <TerminalIcon size={14} />
@@ -95,7 +94,6 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
           </div>
         </div>
 
-        {/* Content */}
         {!isMinimized && (
           <>
             <div 
@@ -109,7 +107,6 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
               ))}
             </div>
 
-            {/* Input */}
             <form onSubmit={handleCommand} className="p-4 pt-0 flex gap-2 items-center">
               <span className="text-accent font-bold">{'>'}</span>
               <input

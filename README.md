@@ -3,7 +3,7 @@
 Welcome to the source code for my personal portfolio website.
 
 ## 🚀 Live Demo
-[View Live Site](https://myportfolio-listoncrypt.vercel.app/) *(Update this link to your actual Vercel domain if different)*
+[View Live Site](https://myportfolio-listoncrypt.vercel.app/)
 
 ## 🛠️ Tech Stack
 - **React** 19

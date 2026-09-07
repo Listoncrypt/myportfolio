@@ -26,7 +26,6 @@ interface ShelfItem {
 const shelfCategories = ["All", "Languages", "Frameworks", "Cloud & DevOps", "Data & Security", "Books"] as const;
 
 const shelfItems: ShelfItem[] = [
-  // --- Languages (from screenshot) ---
   { name: "TypeScript", type: "Language", category: "Languages", icon: <span className="font-mono font-black text-sky-400">TS</span> },
   { name: "Rust", type: "Language", category: "Languages", icon: "🦀" },
   { name: "JavaScript", type: "Language", category: "Languages", icon: <span className="font-mono font-black text-amber-300">JS</span> },
@@ -46,7 +45,6 @@ const shelfItems: ShelfItem[] = [
   { name: "GraphQL", type: "Query Language", category: "Languages", icon: "◈" },
   { name: "SQL", type: "Query Language", category: "Languages", icon: "🗄️" },
 
-  // --- Frameworks & Libraries (from screenshot) ---
   { name: "React", type: "Frontend Library", category: "Frameworks", icon: "⚛️" },
   { name: "React Native", type: "Mobile Framework", category: "Frameworks", icon: "📱" },
   { name: "Django", type: "Web Framework", category: "Frameworks", icon: <span className="font-mono font-black text-emerald-600">DJ</span> },
@@ -60,7 +58,6 @@ const shelfItems: ShelfItem[] = [
   { name: "Gatsby", type: "Static Generator", category: "Frameworks", icon: "🟣" },
   { name: "Vue / Vuetify", type: "UI Framework", category: "Frameworks", icon: "🟢" },
 
-  // --- Cloud & DevOps (from screenshot) ---
   { name: "Docker", type: "Containers", category: "Cloud & DevOps", icon: "🐳" },
   { name: "AWS", type: "Cloud Provider", category: "Cloud & DevOps", icon: "☁️" },
   { name: "Azure", type: "Cloud Provider", category: "Cloud & DevOps", icon: "🔷" },
@@ -72,7 +69,6 @@ const shelfItems: ShelfItem[] = [
   { name: "Render", type: "Cloud Hosting", category: "Cloud & DevOps", icon: "🚀" },
   { name: "Heroku", type: "Cloud PaaS", category: "Cloud & DevOps", icon: "🟣" },
 
-  // --- Databases, Data & Security (from screenshot & profile) ---
   { name: "PostgreSQL", type: "Relational Database", category: "Data & Security", icon: "🐘" },
   { name: "SQLite", type: "Embedded DB", category: "Data & Security", icon: "💾" },
   { name: "Supabase", type: "Backend & Postgres", category: "Data & Security", icon: "⚡" },
@@ -83,7 +79,6 @@ const shelfItems: ShelfItem[] = [
   { name: "Apache Airflow", type: "Workflow Orchestration", category: "Data & Security", icon: "🌪️" },
   { name: "Pandas", type: "Data Analysis", category: "Data & Security", icon: "🐼" },
 
-  // --- Books ---
   { name: "Hacker's Handbook", type: "Security Book", category: "Books", icon: "📚" },
   { name: "Clean Code", type: "Software Design Book", category: "Books", icon: "📖" },
   { name: "Data-Intensive Apps", type: "Architecture Book", category: "Books", icon: "🏗️" },
@@ -150,20 +145,17 @@ export default function App() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
           >
-            {/* Custom Cursor */}
             <motion.div 
               className="fixed top-0 left-0 w-8 h-8 bg-accent rounded-full pointer-events-none z-50 custom-cursor hidden md:block"
               animate={{ x: mousePos.x - 16, y: mousePos.y - 16 }}
               transition={{ type: "spring", damping: 20, stiffness: 250, mass: 0.5 }}
             />
 
-            {/* Progress Bar */}
             <motion.div
               className="fixed top-0 left-0 right-0 h-1 bg-accent origin-left z-[60]"
               style={{ scaleX }}
             />
 
-            {/* Header */}
             <header className="fixed top-0 left-0 w-full z-40 px-6 py-8 md:px-12 flex justify-between items-center mix-blend-difference">
               <motion.div 
                 initial={{ opacity: 0, x: -20 }}
@@ -224,7 +216,6 @@ export default function App() {
               </div>
             </header>
 
-            {/* Mobile Menu */}
             <motion.div
               initial={false}
               animate={isMenuOpen ? { x: 0 } : { x: "100%" }}
@@ -265,7 +256,6 @@ export default function App() {
             </motion.div>
 
             <main id="main" className="pt-32 pb-20 px-6 md:px-12 max-w-7xl mx-auto">
-              {/* Hero Section */}
               <section className="min-h-[70vh] flex flex-col justify-center">
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
@@ -313,7 +303,6 @@ export default function App() {
                 </motion.div>
               </section>
 
-              {/* Bio Sections */}
               <section className="mt-40 grid grid-cols-1 md:grid-cols-12 gap-12 border-t border-fg/10 pt-20">
                 <div className="md:col-span-4">
                   <h3 className="text-sm uppercase tracking-widest text-fg/40 font-bold sticky top-32">
@@ -336,7 +325,6 @@ export default function App() {
                 </div>
               </section>
 
-              {/* Work Section */}
               <section id="work" className="mt-40 border-t border-fg/10 pt-20">
                 <div className="flex justify-between items-end mb-20">
                   <div>
@@ -452,7 +440,6 @@ export default function App() {
                 </div>
               </section>
 
-              {/* Craft Section */}
               <section id="shelf" className="mt-40 border-t border-fg/10 pt-20">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
                   <div>
@@ -469,7 +456,6 @@ export default function App() {
                   </p>
                 </div>
 
-                {/* Category Filter Tabs */}
                 <div className="flex flex-wrap gap-2 mb-10">
                   {shelfCategories.map((category) => {
                     const isSelected = selectedShelfCategory === category;
@@ -559,7 +545,6 @@ export default function App() {
                 })()}
               </section>
 
-              {/* Contact CTA */}
               <section className="mt-40 py-40 border-t border-fg/10 text-center">
                 <motion.div
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -581,7 +566,6 @@ export default function App() {
               </section>
             </main>
 
-            {/* Footer */}
             <footer className="px-6 md:px-12 py-12 border-t border-fg/10 flex flex-col md:flex-row justify-between items-center gap-8">
               <div className="text-sm opacity-40">
                 © {new Date().getFullYear()} Uchenna Ebube. All rights reserved.
@@ -610,7 +594,6 @@ export default function App() {
               </div>
             </footer>
 
-            {/* Live Security Feed Marquee */}
             <div className="bg-accent/10 border-t border-accent/20 py-2 overflow-hidden whitespace-nowrap no-print">
               <motion.div 
                 animate={{ x: [0, -1000] }}
@@ -646,7 +629,6 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* Terminal Toggle Button */}
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -656,10 +638,8 @@ export default function App() {
         <TerminalIcon size={windowWidth < 768 ? 20 : 24} />
       </motion.button>
 
-      {/* Terminal Component */}
       <Terminal isOpen={isTerminalOpen} onClose={() => setIsTerminalOpen(false)} />
 
-      {/* Background Decoration */}
       <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
         <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/5 blur-[120px] rounded-full" />
         <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-accent/5 blur-[120px] rounded-full" />

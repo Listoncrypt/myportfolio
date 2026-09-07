@@ -13,7 +13,6 @@ export default function Resume({ onBack }: ResumeProps) {
       exit={{ opacity: 0, y: -20 }}
       className="min-h-screen bg-white text-slate-900 selection:bg-slate-900 selection:text-white pb-20"
     >
-      {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 px-4 md:px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4 no-print">
         <button 
           onClick={onBack}
@@ -46,7 +45,6 @@ export default function Resume({ onBack }: ResumeProps) {
       </nav>
 
       <main className="max-w-4xl mx-auto px-6 pt-16 print-container">
-        {/* Header */}
         <header className="border-b-2 border-slate-900 pb-10 mb-12">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
             <div>
@@ -71,7 +69,6 @@ export default function Resume({ onBack }: ResumeProps) {
           </div>
         </header>
 
-        {/* Summary */}
         <section className="mb-12">
           <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-slate-400 mb-4">Professional Summary</h2>
           <p className="text-lg leading-relaxed text-slate-700">
@@ -80,9 +77,7 @@ export default function Resume({ onBack }: ResumeProps) {
         </section>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Sidebar */}
           <div className="md:col-span-1 space-y-10">
-            {/* Core Technologies */}
             <section>
               <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-slate-400 mb-6">Core Technologies</h2>
               <div className="space-y-6">
@@ -113,7 +108,6 @@ export default function Resume({ onBack }: ResumeProps) {
               </div>
             </section>
 
-            {/* Competencies */}
             <section>
               <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-slate-400 mb-6">Competencies</h2>
               <ul className="text-sm text-slate-600 space-y-2">
@@ -133,7 +127,6 @@ export default function Resume({ onBack }: ResumeProps) {
               </ul>
             </section>
 
-            {/* Education */}
             <section>
               <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-slate-400 mb-6">Education</h2>
               <div className="space-y-4">
@@ -148,7 +141,6 @@ export default function Resume({ onBack }: ResumeProps) {
               </div>
             </section>
 
-            {/* Certifications */}
             <section>
               <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-slate-400 mb-6">Certifications</h2>
               <div className="space-y-2">
@@ -158,13 +150,11 @@ export default function Resume({ onBack }: ResumeProps) {
             </section>
           </div>
 
-          {/* Main Content */}
           <div className="md:col-span-2 space-y-12">
             <section>
               <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-slate-400 mb-8">Experience</h2>
               
               <div className="space-y-12">
-                {/* Cyber Sentinel */}
                 <div className="relative pl-8 border-l border-slate-200">
                   <div className="absolute top-0 left-[-5px] w-[10px] h-[10px] rounded-full bg-slate-900" />
                   <div className="flex justify-between items-start mb-2">
@@ -186,7 +176,6 @@ export default function Resume({ onBack }: ResumeProps) {
                   </ul>
                 </div>
 
-                {/* Hakai Security */}
                 <div className="relative pl-8 border-l border-slate-200">
                   <div className="absolute top-0 left-[-5px] w-[10px] h-[10px] rounded-full bg-slate-300" />
                   <div className="flex justify-between items-start mb-2">
@@ -207,7 +196,6 @@ export default function Resume({ onBack }: ResumeProps) {
                   </ul>
                 </div>
 
-                {/* NexusSec Solutions */}
                 <div className="relative pl-8 border-l border-slate-200">
                   <div className="absolute top-0 left-[-5px] w-[10px] h-[10px] rounded-full bg-slate-300" />
                   <div className="flex justify-between items-start mb-2">
@@ -229,7 +217,6 @@ export default function Resume({ onBack }: ResumeProps) {
               </div>
             </section>
 
-            {/* Reading List */}
             <section>
               <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-slate-400 mb-6">Reading List</h2>
               <div className="grid grid-cols-1 gap-4">
