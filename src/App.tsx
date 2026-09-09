@@ -9,7 +9,10 @@ import {
   ArrowRight,
   Menu,
   X,
-  Terminal as TerminalIcon
+  Terminal as TerminalIcon,
+  ChevronLeft,
+  ChevronRight,
+  Maximize2
 } from "lucide-react";
 import { useState, useEffect, ReactNode } from "react";
 import Resume from "./components/Resume";
@@ -83,10 +86,45 @@ const shelfItems: ShelfItem[] = [
   { name: "Data-Intensive Apps", type: "Architecture Book", category: "Books", icon: "🏗️" },
 ];
 
+interface DesignItem {
+  index: number;
+  src: string;
+  label: string;
+  category: string;
+}
+
+const designWorks: DesignItem[] = [
+  { index: 0, src: "https://www.robably.net/work/superpower-01.jpg", label: "Superpower", category: "Brand & Digital" },
+  { index: 1, src: "https://www.robably.net/work/immunefi-02.jpg", label: "Immunefi", category: "Identity System" },
+  { index: 2, src: "https://www.robably.net/work/harvest-03.png", label: "Harvest", category: "Visual Direction" },
+  { index: 3, src: "https://www.robably.net/work/infrared-01.jpg", label: "Infrared", category: "Creative Direction" },
+  { index: 4, src: "https://www.robably.net/work/prosper-02.jpg", label: "Prosper", category: "Brand Design" },
+  { index: 5, src: "https://www.robably.net/work/agentflow-01.jpg", label: "Agentflow", category: "Product Visuals" },
+  { index: 6, src: "https://www.robably.net/work/canna42-01.png", label: "Canna42", category: "Packaging & Identity" },
+  { index: 7, src: "https://www.robably.net/work/finally-01.jpg", label: "Finally", category: "Creative Direction" },
+  { index: 8, src: "https://www.robably.net/work/library-onchain-02.jpg", label: "Library Onchain", category: "Web3 Identity" },
+  { index: 9, src: "https://www.robably.net/work/metagame-01.png", label: "Metagame", category: "Visual System" },
+  { index: 10, src: "https://www.robably.net/work/warden-01.jpg", label: "Warden", category: "Protocol Branding" },
+  { index: 11, src: "https://www.robably.net/work/requite-01.jpg", label: "Requite", category: "Graphic Design" },
+  { index: 12, src: "https://www.robably.net/work/arkaic-01.jpg", label: "Arkaic", category: "Type & Brand" },
+  { index: 13, src: "https://www.robably.net/work/alloy-01.png", label: "Alloy", category: "Product Identity" },
+  { index: 14, src: "https://www.robably.net/work/origami-01.jpg", label: "Origami", category: "Creative Design" },
+  { index: 15, src: "https://www.robably.net/work/virginia-beach-buzz-01.jpg", label: "Virginia Beach Buzz", category: "Editorial & Art" },
+  { index: 16, src: "https://www.robably.net/work/snowventco-01.jpg", label: "Snowventco", category: "Brand Identity" },
+  { index: 17, src: "https://www.robably.net/work/michael-sausa-01.png", label: "Michael Sausa", category: "Portfolio & Visuals" },
+];
+
+const designColumns = [
+  designWorks.slice(0, 6),
+  designWorks.slice(6, 12),
+  designWorks.slice(12, 18),
+];
+
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTerminalOpen, setIsTerminalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState<"home" | "resume">("home");
+  const [selectedDesignIndex, setSelectedDesignIndex] = useState<number | null>(null);
   const [selectedShelfCategory, setSelectedShelfCategory] = useState<string>("All");
   const [isShelfExpanded, setIsShelfExpanded] = useState(false);
   const INITIAL_SHELF_COUNT = 8;
@@ -114,6 +152,31 @@ export default function App() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedDesignIndex === null) return;
+      if (e.key === "Escape") {
+        setSelectedDesignIndex(null);
+      } else if (e.key === "ArrowLeft") {
+        setSelectedDesignIndex((prev) => (prev !== null ? (prev > 0 ? prev - 1 : designWorks.length - 1) : null));
+      } else if (e.key === "ArrowRight") {
+        setSelectedDesignIndex((prev) => (prev !== null ? (prev < designWorks.length - 1 ? prev + 1 : 0) : null));
+      }
+    };
+
+    if (selectedDesignIndex !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedDesignIndex]);
 
   const navLinks = [
     { name: "What I Built", href: "#work", type: "anchor" },
@@ -535,38 +598,13 @@ export default function App() {
                     </h2>
                   </div>
                   <p className="max-w-md text-fg/60 text-lg">
-                    Brand identity, marketing, web and creative technology — crafted in close collaboration with <a href="https://www.robably.net" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Rob Daniels</a> and other top designers worldwide.
+                    Brand identity, visual marketing, high-impact web design, and creative technology crafted for cutting-edge digital products and protocols. Tap any design to view full size.
                   </p>
                 </div>
 
                 <div className="rounded-2xl overflow-hidden bg-black p-1">
                   <div className="flex gap-1">
-                    {[
-                      [
-                        { src: "https://www.robably.net/work/superpower-01.jpg", label: "Superpower" },
-                        { src: "https://www.robably.net/work/immunefi-02.jpg", label: "Immunefi" },
-                        { src: "https://www.robably.net/work/harvest-03.png", label: "Harvest" },
-                        { src: "https://www.robably.net/work/infrared-01.jpg", label: "Infrared" },
-                        { src: "https://www.robably.net/work/prosper-02.jpg", label: "Prosper" },
-                        { src: "https://www.robably.net/work/agentflow-01.jpg", label: "Agentflow" },
-                      ],
-                      [
-                        { src: "https://www.robably.net/work/canna42-01.png", label: "Canna42" },
-                        { src: "https://www.robably.net/work/finally-01.jpg", label: "Finally" },
-                        { src: "https://www.robably.net/work/library-onchain-02.jpg", label: "Library Onchain" },
-                        { src: "https://www.robably.net/work/metagame-01.png", label: "Metagame" },
-                        { src: "https://www.robably.net/work/warden-01.jpg", label: "Warden" },
-                        { src: "https://www.robably.net/work/requite-01.jpg", label: "Requite" },
-                      ],
-                      [
-                        { src: "https://www.robably.net/work/arkaic-01.jpg", label: "Arkaic" },
-                        { src: "https://www.robably.net/work/alloy-01.png", label: "Alloy" },
-                        { src: "https://www.robably.net/work/origami-01.jpg", label: "Origami" },
-                        { src: "https://www.robably.net/work/virginia-beach-buzz-01.jpg", label: "Virginia Beach Buzz" },
-                        { src: "https://www.robably.net/work/snowventco-01.jpg", label: "Snowventco" },
-                        { src: "https://www.robably.net/work/michael-sausa-01.png", label: "Michael Sausa" },
-                      ],
-                    ].map((col, ci) => (
+                    {designColumns.map((col, ci) => (
                       <div
                         key={ci}
                         className="flex flex-1 flex-col"
@@ -575,17 +613,26 @@ export default function App() {
                         {col.map((item) => (
                           <motion.div
                             key={item.src}
-                            className="group p-[5px] bg-black cursor-pointer"
+                            className="group p-[5px] bg-black cursor-pointer relative"
                             whileHover={{ scale: 1.01 }}
                             transition={{ duration: 0.3 }}
+                            onClick={() => setSelectedDesignIndex(item.index)}
                           >
-                            <div className="overflow-hidden rounded-md bg-neutral-900 transition-[border-radius] duration-200 ease-out group-hover:rounded-[1.5rem]">
+                            <div className="relative overflow-hidden rounded-md bg-neutral-900 transition-[border-radius] duration-200 ease-out group-hover:rounded-[1.5rem]">
                               <img
                                 src={item.src}
                                 alt={item.label}
                                 loading="lazy"
                                 className="w-full object-cover scale-[1.02] group-hover:scale-[1.06] transition-transform duration-700 ease-out"
                               />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                                <span className="text-white font-display font-bold text-sm md:text-base tracking-tight">
+                                  {item.label}
+                                </span>
+                                <span className="text-accent text-xs font-mono flex items-center gap-1.5 mt-1">
+                                  <Maximize2 size={12} /> Tap to preview
+                                </span>
+                              </div>
                             </div>
                           </motion.div>
                         ))}
@@ -791,6 +838,113 @@ export default function App() {
       </motion.button>
 
       <Terminal isOpen={isTerminalOpen} onClose={() => setIsTerminalOpen(false)} />
+
+      {/* Fullscreen Design Lightbox Modal */}
+      <AnimatePresence>
+        {selectedDesignIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex flex-col justify-between p-4 md:p-8 select-none"
+            onClick={() => setSelectedDesignIndex(null)}
+          >
+            {/* Header Bar */}
+            <div
+              className="flex items-center justify-between w-full max-w-6xl mx-auto z-10"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse" />
+                <div>
+                  <h3 className="text-white font-display font-bold text-lg md:text-xl tracking-tight">
+                    {designWorks[selectedDesignIndex].label}
+                  </h3>
+                  <p className="text-xs font-mono text-neutral-400 uppercase tracking-wider">
+                    {designWorks[selectedDesignIndex].category} • {selectedDesignIndex + 1} of {designWorks.length}
+                  </p>
+                </div>
+              </div>
+
+              <button
+                onClick={() => setSelectedDesignIndex(null)}
+                className="p-3 rounded-full bg-neutral-900/80 hover:bg-neutral-800 text-white transition-colors border border-white/10 flex items-center justify-center group"
+                title="Close (Esc)"
+                aria-label="Close"
+              >
+                <X size={22} className="group-hover:rotate-90 transition-transform duration-200" />
+              </button>
+            </div>
+
+            {/* Main Image Viewport */}
+            <div
+              className="relative flex-1 flex items-center justify-center my-3 overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Previous Button */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedDesignIndex((prev) =>
+                    prev !== null ? (prev > 0 ? prev - 1 : designWorks.length - 1) : 0
+                  );
+                }}
+                className="absolute left-2 md:left-6 z-20 p-3 md:p-4 rounded-full bg-black/60 hover:bg-black/90 text-white backdrop-blur-sm border border-white/10 transition-all hover:scale-110 active:scale-95"
+                aria-label="Previous work"
+              >
+                <ChevronLeft size={24} />
+              </button>
+
+              {/* The Full Image */}
+              <motion.div
+                key={selectedDesignIndex}
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.2 }}
+                className="max-w-5xl max-h-[75vh] w-auto h-auto flex items-center justify-center px-4"
+              >
+                <img
+                  src={designWorks[selectedDesignIndex].src}
+                  alt={designWorks[selectedDesignIndex].label}
+                  className="max-h-[75vh] max-w-full w-auto h-auto object-contain rounded-xl shadow-2xl border border-white/10"
+                />
+              </motion.div>
+
+              {/* Next Button */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedDesignIndex((prev) =>
+                    prev !== null ? (prev < designWorks.length - 1 ? prev + 1 : 0) : 0
+                  );
+                }}
+                className="absolute right-2 md:right-6 z-20 p-3 md:p-4 rounded-full bg-black/60 hover:bg-black/90 text-white backdrop-blur-sm border border-white/10 transition-all hover:scale-110 active:scale-95"
+                aria-label="Next work"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </div>
+
+            {/* Footer Info */}
+            <div
+              className="w-full max-w-6xl mx-auto flex items-center justify-between text-xs font-mono text-neutral-500 z-10 pt-3 border-t border-white/10"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <span className="hidden md:inline">
+                Use ← / → arrow keys to browse • Press ESC to close
+              </span>
+              <span className="md:hidden">
+                Tap arrows to browse • Tap outside or ✕ to close
+              </span>
+              <span className="text-neutral-400">
+                Visual System Portfolio
+              </span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
         <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-accent/5 blur-[120px] rounded-full" />
