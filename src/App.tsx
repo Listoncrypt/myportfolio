@@ -118,6 +118,7 @@ export default function App() {
 
   const navLinks = [
     { name: "What I Built", href: "#work", type: "anchor" },
+    { name: "Contributions", href: "#contributions", type: "anchor" },
     { name: "The Craft", href: "#shelf", type: "anchor" },
     { name: "My Résumé", href: "#resume", type: "page" },
     { name: "Contact", href: "mailto:listoncrypt@gmail.com", type: "external" },
@@ -440,7 +441,7 @@ export default function App() {
                 </div>
               </section>
 
-              <section className="mt-40 border-t border-fg/10 pt-20">
+              <section id="contributions" className="mt-40 border-t border-fg/10 pt-20">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
                   <div>
                     <h3 className="text-sm uppercase tracking-widest text-fg/40 font-bold mb-4">
@@ -459,18 +460,18 @@ export default function App() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {[
                     {
-                      repo: "etournity/etournity",
-                      tag: "Esports",
-                      desc: "Open-source esports tournament management platform — contributed backend API improvements and authentication hardening.",
-                      href: "https://github.com/etournity/etournity",
-                      color: "text-amber-400",
-                    },
-                    {
                       repo: "StellarFlow-Network/stellarflow-backend",
                       tag: "Backend",
                       desc: "Contributed to the backend infrastructure of the StellarFlow decentralised network — TypeScript, REST API design, and database optimisations.",
                       href: "https://github.com/StellarFlow-Network/stellarflow-backend",
                       color: "text-sky-400",
+                    },
+                    {
+                      repo: "etournity/etournity",
+                      tag: "Esports",
+                      desc: "Open-source esports tournament management platform — contributed backend API improvements and authentication hardening.",
+                      href: "https://github.com/etournity/etournity",
+                      color: "text-amber-400",
                     },
                     {
                       repo: "Stream-Scholar/Stream-Scholar-contracts",
