@@ -118,6 +118,7 @@ export default function App() {
   const navLinks = [
     { name: "What I Built", href: "#work", type: "anchor" },
     { name: "Contributions", href: "#contributions", type: "anchor" },
+    { name: "Design", href: "#design", type: "anchor" },
     { name: "The Craft", href: "#shelf", type: "anchor" },
     { name: "My Résumé", href: "#resume", type: "page" },
     { name: "Contact", href: "mailto:listoncrypt@gmail.com", type: "external" },
@@ -262,7 +263,7 @@ export default function App() {
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <h2 className="text-accent font-display font-medium uppercase tracking-[0.2em] text-sm mb-6">
-                    Full-Stack & Mobile Engineer | Cybersecurity Analyst
+                    Full-Stack & Mobile Engineer | Graphic Designer | Cybersecurity Analyst
                   </h2>
                   <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] font-display font-extrabold leading-[0.9] tracking-tighter mb-12">
                     HEY, I'M <br />
@@ -279,7 +280,7 @@ export default function App() {
                 >
                   <div className="max-w-xl">
                     <p className="text-xl md:text-2xl text-fg/80 leading-relaxed font-light">
-                      I design and build complete systems — from secure backend architectures and scalable APIs to native/cross-platform mobile apps for iOS and Android using Swift, Objective-C, Flutter, and React Native. I work across TypeScript, React, Python, and Django, crafting resilient, production-ready systems and intuitive user experiences.
+                      I design and build complete systems — from secure backend architectures and scalable APIs to native/cross-platform mobile apps, and high-impact graphic design work spanning brand identity, marketing, and visual systems. I’ve collaborated closely with top designers worldwide and bring that visual precision into everything I build.
                     </p>
                   </div>
 
@@ -310,7 +311,7 @@ export default function App() {
                 </div>
                 <div className="md:col-span-8 space-y-12">
                   <p className="text-2xl md:text-3xl leading-snug font-light">
-                    I am a <span className="text-accent font-medium">Full-Stack & Mobile Engineer</span> and <span className="text-accent font-medium">Cybersecurity Analyst</span> who enjoys rapidly transforming ideas into functional products. Whether building native mobile applications with <span className="text-accent font-medium">Swift</span>, <span className="text-accent font-medium">Objective-C</span>, and <span className="text-accent font-medium">Kotlin</span>, cross-platform apps with <span className="text-accent font-medium">Flutter</span> and <span className="text-accent font-medium">React Native</span>, or engineering scalable backend infrastructure, I deliver clean, maintainable solutions from concept to deployment.
+                    I am a <span className="text-accent font-medium">Full-Stack & Mobile Engineer</span>, <span className="text-accent font-medium">Graphic Designer</span>, and <span className="text-accent font-medium">Cybersecurity Analyst</span> who enjoys rapidly transforming ideas into functional products. Whether building native mobile applications with <span className="text-accent font-medium">Swift</span>, <span className="text-accent font-medium">Objective-C</span>, and <span className="text-accent font-medium">Kotlin</span>, cross-platform apps with <span className="text-accent font-medium">Flutter</span> and <span className="text-accent font-medium">React Native</span>, crafting brand identities and visual systems alongside top designers globally, or engineering scalable backend infrastructure — I deliver clean, precise solutions from concept to deployment.
                   </p>
                   <p className="text-2xl md:text-3xl leading-snug font-light">
                     Currently, I serve as Lead Backend Developer at <span className="text-accent font-medium">Cyber Sentinel</span>, a security-focused project developing deepfake detection systems. I architect and maintain the core backend infrastructure using Django and Flask, ensuring scalability, secure authentication systems, encryption mechanisms, and real-time processing pipelines.
@@ -522,11 +523,83 @@ export default function App() {
                 </div>
               </section>
 
+              <section id="design" className="mt-40 border-t border-fg/10 pt-20">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
+                  <div>
+                    <h3 className="text-sm uppercase tracking-widest text-fg/40 font-bold mb-4">
+                      04. Graphic Design
+                    </h3>
+                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold tracking-tighter">
+                      THE <span className="text-stroke">DESIGN</span> <br />
+                      WORK.
+                    </h2>
+                  </div>
+                  <p className="max-w-md text-fg/60 text-lg">
+                    Brand identity, marketing, web and creative technology — crafted in close collaboration with <a href="https://www.robably.net" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Rob Daniels</a> and other top designers worldwide.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl overflow-hidden bg-black p-1">
+                  <div className="flex gap-1">
+                    {[
+                      [
+                        { src: "https://www.robably.net/work/superpower-01.jpg", label: "Superpower" },
+                        { src: "https://www.robably.net/work/immunefi-02.jpg", label: "Immunefi" },
+                        { src: "https://www.robably.net/work/harvest-03.png", label: "Harvest" },
+                        { src: "https://www.robably.net/work/infrared-01.jpg", label: "Infrared" },
+                        { src: "https://www.robably.net/work/prosper-02.jpg", label: "Prosper" },
+                        { src: "https://www.robably.net/work/agentflow-01.jpg", label: "Agentflow" },
+                      ],
+                      [
+                        { src: "https://www.robably.net/work/canna42-01.png", label: "Canna42" },
+                        { src: "https://www.robably.net/work/finally-01.jpg", label: "Finally" },
+                        { src: "https://www.robably.net/work/library-onchain-02.jpg", label: "Library Onchain" },
+                        { src: "https://www.robably.net/work/metagame-01.png", label: "Metagame" },
+                        { src: "https://www.robably.net/work/warden-01.jpg", label: "Warden" },
+                        { src: "https://www.robably.net/work/requite-01.jpg", label: "Requite" },
+                      ],
+                      [
+                        { src: "https://www.robably.net/work/arkaic-01.jpg", label: "Arkaic" },
+                        { src: "https://www.robably.net/work/alloy-01.png", label: "Alloy" },
+                        { src: "https://www.robably.net/work/origami-01.jpg", label: "Origami" },
+                        { src: "https://www.robably.net/work/virginia-beach-buzz-01.jpg", label: "Virginia Beach Buzz" },
+                        { src: "https://www.robably.net/work/snowventco-01.jpg", label: "Snowventco" },
+                        { src: "https://www.robably.net/work/michael-sausa-01.png", label: "Michael Sausa" },
+                      ],
+                    ].map((col, ci) => (
+                      <div
+                        key={ci}
+                        className="flex flex-1 flex-col"
+                        style={ci % 2 === 1 ? { transform: "translateY(40px)" } : {}}
+                      >
+                        {col.map((item) => (
+                          <motion.div
+                            key={item.src}
+                            className="group p-[5px] bg-black cursor-pointer"
+                            whileHover={{ scale: 1.01 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <div className="overflow-hidden rounded-md bg-neutral-900 transition-[border-radius] duration-200 ease-out group-hover:rounded-[1.5rem]">
+                              <img
+                                src={item.src}
+                                alt={item.label}
+                                loading="lazy"
+                                className="w-full object-cover scale-[1.02] group-hover:scale-[1.06] transition-transform duration-700 ease-out"
+                              />
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+
               <section id="shelf" className="mt-40 border-t border-fg/10 pt-20">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
                   <div>
                     <h3 className="text-sm uppercase tracking-widest text-fg/40 font-bold mb-4">
-                      04. Craft
+                      05. Craft
                     </h3>
                     <h2 className="text-4xl md:text-6xl font-display font-extrabold tracking-tighter">
                       THE <span className="text-stroke">CRAFT.</span> <br />
