@@ -1,11 +1,11 @@
 import { motion, useScroll, useSpring, AnimatePresence } from "motion/react";
-import { 
-  Github, 
-  Twitter, 
-  Linkedin, 
-  Youtube, 
-  Mail, 
-  Send, 
+import {
+  Github,
+  Twitter,
+  Linkedin,
+  Youtube,
+  Mail,
+  Send,
   ExternalLink,
   ArrowRight,
   Menu,
@@ -27,11 +27,9 @@ const shelfCategories = ["All", "Languages", "Frameworks", "Cloud & DevOps", "Da
 
 const shelfItems: ShelfItem[] = [
   { name: "TypeScript", type: "Language", category: "Languages", icon: <span className="font-mono font-black text-sky-400">TS</span> },
-  { name: "Shopify", type: "E-Commerce & Liquid", category: "Frameworks", icon: "🛍️" },
   { name: "React", type: "Frontend Library", category: "Frameworks", icon: "⚛️" },
   { name: "Rust", type: "Language", category: "Languages", icon: "🦀" },
   { name: "JavaScript", type: "Language", category: "Languages", icon: <span className="font-mono font-black text-amber-300">JS</span> },
-  { name: "Liquid", type: "Shopify Engine", category: "Languages", icon: <span className="font-mono font-black text-emerald-400">💧</span> },
   { name: "Go", type: "Language", category: "Languages", icon: <span className="font-mono font-black text-cyan-400">GO</span> },
   { name: "Java", type: "Language", category: "Languages", icon: "☕" },
   { name: "Python", type: "Language", category: "Languages", icon: "🐍" },
@@ -102,16 +100,16 @@ export default function App() {
   });
 
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePos({ x: e.clientX, y: e.clientY });
     };
     const handleResize = () => setWindowWidth(window.innerWidth);
-    
+
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("resize", handleResize);
-    
+
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("resize", handleResize);
@@ -147,7 +145,7 @@ export default function App() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
           >
-            <motion.div 
+            <motion.div
               className="fixed top-0 left-0 w-8 h-8 bg-accent rounded-full pointer-events-none z-50 custom-cursor hidden md:block"
               animate={{ x: mousePos.x - 16, y: mousePos.y - 16 }}
               transition={{ type: "spring", damping: 20, stiffness: 250, mass: 0.5 }}
@@ -159,7 +157,7 @@ export default function App() {
             />
 
             <header className="fixed top-0 left-0 w-full z-40 px-6 py-8 md:px-12 flex justify-between items-center mix-blend-difference">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 className="text-2xl font-display font-bold tracking-tighter cursor-pointer"
@@ -208,8 +206,8 @@ export default function App() {
                     </motion.a>
                   ))}
                 </div>
-                
-                <button 
+
+                <button
                   className="md:hidden p-2"
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
@@ -223,7 +221,7 @@ export default function App() {
               animate={isMenuOpen ? { x: 0 } : { x: "100%" }}
               className="fixed inset-0 bg-bg z-50 flex flex-col items-center justify-center gap-8 md:hidden"
             >
-              <button 
+              <button
                 className="absolute top-8 right-6 p-2"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -265,7 +263,7 @@ export default function App() {
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <h2 className="text-accent font-display font-medium uppercase tracking-[0.2em] text-sm mb-6">
-                    Full-Stack & Mobile Engineer | Shopify Developer | Cybersecurity Analyst
+                    Full-Stack & Mobile Engineer | Cybersecurity Analyst
                   </h2>
                   <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] font-display font-extrabold leading-[0.9] tracking-tighter mb-12">
                     HEY, I'M <br />
@@ -274,7 +272,7 @@ export default function App() {
                   </h1>
                 </motion.div>
 
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5, duration: 1 }}
@@ -282,20 +280,20 @@ export default function App() {
                 >
                   <div className="max-w-xl">
                     <p className="text-xl md:text-2xl text-fg/80 leading-relaxed font-light">
-                      I design and build complete systems — from high-converting Shopify stores and custom Liquid themes to secure backend architectures, responsive web interfaces, and native/cross-platform mobile apps for iOS and Android using Swift, Objective-C, Flutter, and React Native. I work comfortably across TypeScript, React, Python, Django, Liquid, and modern mobile platforms, building scalable APIs, seamless storefronts, and intuitive user experiences.
+                      I design and build complete systems — from secure backend architectures and scalable APIs to native/cross-platform mobile apps for iOS and Android using Swift, Objective-C, Flutter, and React Native. I work across TypeScript, React, Python, and Django, crafting resilient, production-ready systems and intuitive user experiences.
                     </p>
                   </div>
-                  
+
                   <div className="flex flex-col gap-4 items-start md:items-end">
-                    <a 
-                      href="mailto:listoncrypt@gmail.com" 
+                    <a
+                      href="mailto:listoncrypt@gmail.com"
                       className="group flex items-center gap-3 text-lg font-medium hover:text-accent transition-colors"
                     >
                       listoncrypt@gmail.com
                       <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
                     </a>
-                    <a 
-                      href="https://t.me/listoncrypt" 
+                    <a
+                      href="https://t.me/listoncrypt"
                       className="group flex items-center gap-3 text-lg font-medium hover:text-accent transition-colors"
                     >
                       t.me/listoncrypt
@@ -313,7 +311,7 @@ export default function App() {
                 </div>
                 <div className="md:col-span-8 space-y-12">
                   <p className="text-2xl md:text-3xl leading-snug font-light">
-                    I am a <span className="text-accent font-medium">Full-Stack & Mobile Engineer</span>, <span className="text-accent font-medium">Shopify Developer</span>, and <span className="text-accent font-medium">Cybersecurity Analyst</span> who enjoys rapidly transforming ideas into functional products. Whether architecting high-converting Shopify storefronts and custom apps, native mobile applications with <span className="text-accent font-medium">Swift</span>, <span className="text-accent font-medium">Objective-C</span>, and <span className="text-accent font-medium">Kotlin</span>, building cross-platform apps with <span className="text-accent font-medium">Flutter</span> and <span className="text-accent font-medium">React Native</span>, or engineering scalable backend infrastructure, I deliver clean, maintainable solutions from concept to deployment.
+                    I am a <span className="text-accent font-medium">Full-Stack & Mobile Engineer</span> and <span className="text-accent font-medium">Cybersecurity Analyst</span> who enjoys rapidly transforming ideas into functional products. Whether building native mobile applications with <span className="text-accent font-medium">Swift</span>, <span className="text-accent font-medium">Objective-C</span>, and <span className="text-accent font-medium">Kotlin</span>, cross-platform apps with <span className="text-accent font-medium">Flutter</span> and <span className="text-accent font-medium">React Native</span>, or engineering scalable backend infrastructure, I deliver clean, maintainable solutions from concept to deployment.
                   </p>
                   <p className="text-2xl md:text-3xl leading-snug font-light">
                     Currently, I serve as Lead Backend Developer at <span className="text-accent font-medium">Cyber Sentinel</span>, a security-focused project developing deepfake detection systems. I architect and maintain the core backend infrastructure using Django and Flask, ensuring scalability, secure authentication systems, encryption mechanisms, and real-time processing pipelines.
@@ -396,12 +394,12 @@ export default function App() {
                       transition={{ delay: i * 0.1 }}
                       className="group cursor-none"
                     >
-                      <div 
+                      <div
                         className={`aspect-[4/3] overflow-hidden rounded-2xl mb-6 relative ${project.color} cursor-pointer`}
                         onClick={() => project.link && window.open(project.link, '_blank')}
                       >
-                        <img 
-                          src={project.image} 
+                        <img
+                          src={project.image}
                           alt={project.title}
                           className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                           referrerPolicy="no-referrer"
@@ -409,7 +407,7 @@ export default function App() {
                         <div className="absolute inset-0 bg-bg/20 group-hover:bg-transparent transition-colors" />
                       </div>
                       <div className="flex justify-between items-start">
-                        <div 
+                        <div
                           className="cursor-pointer"
                           onClick={() => project.link && window.open(project.link, '_blank')}
                         >
@@ -430,7 +428,7 @@ export default function App() {
                             {project.description}
                           </p>
                         </div>
-                        <button 
+                        <button
                           onClick={() => project.link && window.open(project.link, '_blank')}
                           className="w-12 h-12 rounded-full border border-fg/10 flex items-center justify-center group-hover:bg-fg group-hover:text-bg transition-all"
                         >
@@ -471,16 +469,14 @@ export default function App() {
                           setSelectedShelfCategory(category);
                           setIsShelfExpanded(false);
                         }}
-                        className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 ${
-                          isSelected
+                        className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 ${isSelected
                             ? "bg-accent text-bg font-bold shadow-lg shadow-accent/20"
                             : "bg-fg/5 text-fg/70 hover:bg-fg/10 hover:text-fg border border-fg/10"
-                        }`}
+                          }`}
                       >
                         <span>{category}</span>
-                        <span className={`text-[10px] px-1.5 py-0.5 rounded-full ${
-                          isSelected ? "bg-bg/20 text-bg" : "bg-fg/10 text-fg/50"
-                        }`}>
+                        <span className={`text-[10px] px-1.5 py-0.5 rounded-full ${isSelected ? "bg-bg/20 text-bg" : "bg-fg/10 text-fg/50"
+                          }`}>
                           {count}
                         </span>
                       </button>
@@ -535,9 +531,8 @@ export default function App() {
                             </span>
                             <ArrowRight
                               size={16}
-                              className={`transition-transform duration-300 ${
-                                isShelfExpanded ? "-rotate-90" : "rotate-90 group-hover:translate-y-0.5"
-                              }`}
+                              className={`transition-transform duration-300 ${isShelfExpanded ? "-rotate-90" : "rotate-90 group-hover:translate-y-0.5"
+                                }`}
                             />
                           </button>
                         </div>
@@ -557,7 +552,7 @@ export default function App() {
                     HAVE A PROPOSAL? <br />
                     <span className="text-stroke">LET'S TALK.</span>
                   </h2>
-                  <a 
+                  <a
                     href="mailto:listoncrypt@gmail.com"
                     className="inline-flex items-center gap-4 bg-accent text-bg px-10 py-5 rounded-full text-xl font-bold hover:scale-105 transition-transform active:scale-95"
                   >
@@ -572,11 +567,11 @@ export default function App() {
               <div className="text-sm opacity-40">
                 © {new Date().getFullYear()} Uchenna Ebube. All rights reserved.
               </div>
-              
+
               <div className="flex gap-8">
                 {socialLinks.map((social) => (
-                  <a 
-                    key={social.label} 
+                  <a
+                    key={social.label}
                     href={social.href}
                     className="text-sm font-bold tracking-widest hover:text-accent transition-colors"
                   >
@@ -597,7 +592,7 @@ export default function App() {
             </footer>
 
             <div className="bg-accent/10 border-t border-accent/20 py-2 overflow-hidden whitespace-nowrap no-print">
-              <motion.div 
+              <motion.div
                 animate={{ x: [0, -1000] }}
                 transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
                 className="flex gap-12 items-center text-[10px] font-mono uppercase tracking-widest text-accent/60"

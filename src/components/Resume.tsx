@@ -52,7 +52,7 @@ export default function Resume({ onBack }: ResumeProps) {
                 UCHENNA <br /> EBUBE DAVID
               </h1>
               <p className="text-xl font-medium text-slate-500 uppercase tracking-widest">
-                Full-Stack & Mobile Engineer (iOS & Android) | Shopify Developer | Cybersecurity Analyst
+                Full-Stack & Mobile Engineer (iOS & Android) | Cybersecurity Analyst
               </p>
             </div>
             <div className="flex flex-col gap-2 text-sm font-medium text-slate-600">
@@ -72,7 +72,7 @@ export default function Resume({ onBack }: ResumeProps) {
         <section className="mb-12">
           <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-slate-400 mb-4">Professional Summary</h2>
           <p className="text-lg leading-relaxed text-slate-700">
-            I design and build complete systems — from high-converting Shopify stores, custom themes, and e-commerce applications to secure backend architecture and native/cross-platform mobile apps for iOS and Android using Swift, Objective-C, Flutter, and React Native. I work comfortably across Liquid, TypeScript, React, Flutter, Python, and Django, building scalable APIs, seamless storefronts, and intuitive user experiences. My cybersecurity background influences how I architect systems: security-first, resilient, and production-ready. I enjoy rapidly transforming ideas into functional products and engineering clean, maintainable solutions from concept to deployment.
+            I design and build complete systems — from secure backend architecture and scalable APIs to native/cross-platform mobile apps for iOS and Android using Swift, Objective-C, Flutter, and React Native. I work comfortably across TypeScript, React, Flutter, Python, and Django, building resilient, production-ready systems. My cybersecurity background influences how I architect everything: security-first, scalable, and maintainable from concept to deployment.
           </p>
         </section>
 
@@ -83,11 +83,11 @@ export default function Resume({ onBack }: ResumeProps) {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-xs font-bold uppercase text-slate-900 mb-2">Languages</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">Liquid, Swift, Objective-C, Kotlin, Dart, Java, TypeScript, JavaScript, Python, Rust, Go, C, Solidity, PHP, Ruby, Bash, SQL, HTML5</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">Swift, Objective-C, Kotlin, Dart, Java, TypeScript, JavaScript, Python, Rust, Go, C, Solidity, PHP, Ruby, Bash, SQL, HTML5</p>
                 </div>
                 <div>
-                  <h3 className="text-xs font-bold uppercase text-slate-900 mb-2">E-Commerce, Mobile & Frontend</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">Shopify (Liquid, Custom Themes, Storefront API, App Extensions), iOS (Swift / Objective-C), Android (Kotlin / Java), Flutter, React Native, React, TypeScript, Tailwind CSS</p>
+                  <h3 className="text-xs font-bold uppercase text-slate-900 mb-2">Mobile & Frontend</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">iOS (Swift / Objective-C), Android (Kotlin / Java), Flutter, React Native, React, TypeScript, Tailwind CSS</p>
                 </div>
                 <div>
                   <h3 className="text-xs font-bold uppercase text-slate-900 mb-2">Backend</h3>
@@ -111,8 +111,6 @@ export default function Resume({ onBack }: ResumeProps) {
             <section>
               <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-slate-400 mb-6">Competencies</h2>
               <ul className="text-sm text-slate-600 space-y-2">
-                <li>Shopify Theme & Custom Storefront Development</li>
-                <li>E-Commerce Optimization & Payment Integrations</li>
                 <li>iOS & Android App Development (Native & Cross-Platform)</li>
                 <li>Penetration Testing</li>
                 <li>Red Team Operations</li>
@@ -243,6 +241,58 @@ export default function Resume({ onBack }: ResumeProps) {
                     <p className="text-xs text-slate-500">Martin Kleppmann</p>
                   </div>
                 </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-slate-400 mb-6">Contributions to Top Projects</h2>
+              <div className="space-y-4">
+
+                <div className="border border-slate-100 rounded-xl p-4 hover:border-slate-300 transition-colors">
+                  <div className="flex items-start justify-between gap-2 mb-1">
+                    <p className="text-sm font-bold text-slate-900">etournity/etournity</p>
+                    <span className="text-[10px] font-bold uppercase tracking-widest bg-slate-900 text-white px-2 py-0.5 rounded-full">Esports</span>
+                  </div>
+                  <p className="text-xs text-slate-500 mb-2">Open-source esports tournament management platform — contributed backend API improvements and authentication hardening.</p>
+                  <a href="https://github.com/etournity/etournity" className="text-xs text-blue-600 hover:underline">github.com/etournity/etournity</a>
+                </div>
+
+                <div className="border border-slate-100 rounded-xl p-4 hover:border-slate-300 transition-colors">
+                  <div className="flex items-start justify-between gap-2 mb-1">
+                    <p className="text-sm font-bold text-slate-900">StellarFlow-Network/stellarflow-backend</p>
+                    <span className="text-[10px] font-bold uppercase tracking-widest bg-slate-900 text-white px-2 py-0.5 rounded-full">Backend</span>
+                  </div>
+                  <p className="text-xs text-slate-500 mb-2">Contributed to the backend infrastructure of the StellarFlow decentralised network — TypeScript, REST API design, and database optimisations.</p>
+                  <a href="https://github.com/StellarFlow-Network/stellarflow-backend" className="text-xs text-blue-600 hover:underline">github.com/StellarFlow-Network/stellarflow-backend</a>
+                </div>
+
+                <div className="border border-slate-100 rounded-xl p-4 hover:border-slate-300 transition-colors">
+                  <div className="flex items-start justify-between gap-2 mb-1">
+                    <p className="text-sm font-bold text-slate-900">Stream-Scholar/Stream-Scholar-contracts</p>
+                    <span className="text-[10px] font-bold uppercase tracking-widest bg-slate-900 text-white px-2 py-0.5 rounded-full">Web3 / Rust</span>
+                  </div>
+                  <p className="text-xs text-slate-500 mb-2">Contributed to Rust-based smart contracts for the Stream Scholar decentralised scholarship protocol — security reviews and contract logic refinement.</p>
+                  <a href="https://github.com/Stream-Scholar/Stream-Scholar-contracts" className="text-xs text-blue-600 hover:underline">github.com/Stream-Scholar/Stream-Scholar-contracts</a>
+                </div>
+
+                <div className="border border-slate-100 rounded-xl p-4 hover:border-slate-300 transition-colors">
+                  <div className="flex items-start justify-between gap-2 mb-1">
+                    <p className="text-sm font-bold text-slate-900">amina69/PetAd-backend</p>
+                    <span className="text-[10px] font-bold uppercase tracking-widest bg-slate-900 text-white px-2 py-0.5 rounded-full">Full-Stack</span>
+                  </div>
+                  <p className="text-xs text-slate-500 mb-2">Contributed to the PetAd platform backend — TypeScript API development, JWT authentication, and PostgreSQL schema work.</p>
+                  <a href="https://github.com/amina69/PetAd-backend" className="text-xs text-blue-600 hover:underline">github.com/amina69/PetAd-backend</a>
+                </div>
+
+                <div className="border border-slate-100 rounded-xl p-4 hover:border-slate-300 transition-colors">
+                  <div className="flex items-start justify-between gap-2 mb-1">
+                    <p className="text-sm font-bold text-slate-900">Alien-Protocol/Alien-Protocol</p>
+                    <span className="text-[10px] font-bold uppercase tracking-widest bg-slate-900 text-white px-2 py-0.5 rounded-full">Rust / Systems</span>
+                  </div>
+                  <p className="text-xs text-slate-500 mb-2">Contributed to the Alien Protocol Rust-based systems project — low-level code reviews, vulnerability assessment, and performance improvements.</p>
+                  <a href="https://github.com/Listoncrypt/Alien-Protocol" className="text-xs text-blue-600 hover:underline">github.com/Listoncrypt/Alien-Protocol</a>
+                </div>
+
               </div>
             </section>
           </div>
