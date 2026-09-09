@@ -3,7 +3,6 @@ import {
   Github,
   Twitter,
   Linkedin,
-  Youtube,
   Mail,
   Send,
   ExternalLink,
@@ -128,7 +127,6 @@ export default function App() {
     { icon: <Twitter size={18} />, label: "TW", href: "https://x.com/listoncrypt" },
     { icon: <Github size={18} />, label: "GH", href: "https://github.com/listoncrypt" },
     { icon: <Linkedin size={18} />, label: "LN", href: "https://www.linkedin.com/in/ebube-uchenna-9aab612a5/" },
-    { icon: <Youtube size={18} />, label: "YT", href: "https://youtube.com" },
   ];
 
   if (currentPage === "resume") {
