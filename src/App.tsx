@@ -440,11 +440,94 @@ export default function App() {
                 </div>
               </section>
 
+              <section className="mt-40 border-t border-fg/10 pt-20">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
+                  <div>
+                    <h3 className="text-sm uppercase tracking-widest text-fg/40 font-bold mb-4">
+                      03. Open Source
+                    </h3>
+                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold tracking-tighter">
+                      CONTRIBUTIONS <br />
+                      <span className="text-stroke">TO TOP PROJECTS.</span>
+                    </h2>
+                  </div>
+                  <p className="max-w-md text-fg/60 text-lg">
+                    Repositories I have contributed to — spanning backend systems, Web3 smart contracts, esports infrastructure, and more.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {[
+                    {
+                      repo: "etournity/etournity",
+                      tag: "Esports",
+                      desc: "Open-source esports tournament management platform — contributed backend API improvements and authentication hardening.",
+                      href: "https://github.com/etournity/etournity",
+                      color: "text-amber-400",
+                    },
+                    {
+                      repo: "StellarFlow-Network/stellarflow-backend",
+                      tag: "Backend",
+                      desc: "Contributed to the backend infrastructure of the StellarFlow decentralised network — TypeScript, REST API design, and database optimisations.",
+                      href: "https://github.com/StellarFlow-Network/stellarflow-backend",
+                      color: "text-sky-400",
+                    },
+                    {
+                      repo: "Stream-Scholar/Stream-Scholar-contracts",
+                      tag: "Web3 / Rust",
+                      desc: "Contributed to Rust-based smart contracts for the Stream Scholar decentralised scholarship protocol — security reviews and contract logic refinement.",
+                      href: "https://github.com/Stream-Scholar/Stream-Scholar-contracts",
+                      color: "text-emerald-400",
+                    },
+                    {
+                      repo: "amina69/PetAd-backend",
+                      tag: "Full-Stack",
+                      desc: "Contributed to the PetAd platform backend — TypeScript API development, JWT authentication, and PostgreSQL schema work.",
+                      href: "https://github.com/amina69/PetAd-backend",
+                      color: "text-purple-400",
+                    },
+                    {
+                      repo: "Alien-Protocol/Alien-Protocol",
+                      tag: "Rust / Systems",
+                      desc: "Contributed to the Alien Protocol Rust-based systems project — low-level code reviews, vulnerability assessment, and performance improvements.",
+                      href: "https://github.com/Listoncrypt/Alien-Protocol",
+                      color: "text-red-400",
+                    },
+                  ].map((item, i) => (
+                    <motion.a
+                      key={item.repo}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.08 }}
+                      className="group p-6 rounded-2xl border border-fg/10 bg-fg/[0.02] hover:bg-fg/[0.05] hover:border-accent/30 transition-all duration-300 flex flex-col gap-4"
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <span className={`text-xs font-mono font-bold uppercase tracking-widest ${item.color}`}>
+                          {item.tag}
+                        </span>
+                        <ExternalLink size={14} className="opacity-30 group-hover:opacity-100 group-hover:text-accent transition-all shrink-0" />
+                      </div>
+                      <h4 className="font-display font-bold text-lg leading-snug group-hover:text-accent transition-colors break-all">
+                        {item.repo}
+                      </h4>
+                      <p className="text-fg/50 text-sm leading-relaxed flex-1">{item.desc}</p>
+                      <span className="text-xs font-mono text-fg/30 group-hover:text-accent/60 transition-colors">
+                        github.com/{item.repo}
+                      </span>
+                    </motion.a>
+                  ))}
+                </div>
+              </section>
+
               <section id="shelf" className="mt-40 border-t border-fg/10 pt-20">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
                   <div>
                     <h3 className="text-sm uppercase tracking-widest text-fg/40 font-bold mb-4">
-                      03. Craft
+                      04. Craft
                     </h3>
                     <h2 className="text-4xl md:text-6xl font-display font-extrabold tracking-tighter">
                       THE <span className="text-stroke">CRAFT.</span> <br />
