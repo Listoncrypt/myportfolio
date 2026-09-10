@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowLeft, Mail, MapPin, Globe, Download, Phone, ExternalLink } from "lucide-react";
+import { ArrowLeft, Mail, MapPin, Globe, Download, Phone, ExternalLink, Github } from "lucide-react";
 
 interface ResumeProps {
   onBack: () => void;
@@ -23,6 +23,15 @@ export default function Resume({ onBack }: ResumeProps) {
           <span className="xs:hidden">Back</span>
         </button>
         <div className="flex gap-2 md:gap-4">
+          <a
+            href="https://github.com/listoncrypt"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 border border-slate-200 text-slate-900 px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm font-bold hover:bg-slate-50 transition-colors"
+          >
+            <Github size={16} />
+            GitHub
+          </a>
           <button 
             onClick={() => window.location.href = "mailto:listoncrypt@gmail.com"}
             className="flex items-center gap-2 bg-slate-900 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm font-bold hover:bg-slate-800 transition-colors"
@@ -57,14 +66,17 @@ export default function Resume({ onBack }: ResumeProps) {
             </div>
             <div className="flex flex-col gap-2 text-sm font-medium text-slate-600">
               <div className="flex items-center gap-2">
-                <MapPin size={16} /> Abuja, Nigeria
+                <MapPin size={16} className="text-slate-400" /> Abuja, Nigeria
               </div>
-              <div className="flex items-center gap-2">
-                <Mail size={16} /> listoncrypt@gmail.com
-              </div>
-              <div className="flex items-center gap-2">
-                <Globe size={16} /> https://t.me/listoncrypt
-              </div>
+              <a href="mailto:listoncrypt@gmail.com" className="flex items-center gap-2 hover:text-slate-900 transition-colors">
+                <Mail size={16} className="text-slate-400" /> listoncrypt@gmail.com
+              </a>
+              <a href="https://github.com/listoncrypt" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-slate-900 transition-colors">
+                <Github size={16} className="text-slate-400" /> github.com/listoncrypt
+              </a>
+              <a href="https://t.me/listoncrypt" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-slate-900 transition-colors">
+                <Globe size={16} className="text-slate-400" /> t.me/listoncrypt
+              </a>
             </div>
           </div>
         </header>
