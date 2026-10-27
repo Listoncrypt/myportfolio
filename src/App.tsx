@@ -425,28 +425,22 @@ export default function App() {
                       badges: ["Web3", "Social Rewards", "X API", "Organic Growth"]
                     },
                     {
-                      title: "Cyber Sentinel – Deepfake Detection Infrastructure",
-                      category: "AI Security & Backend Architecture",
-                      description: "Designed and built the backend infrastructure powering a deepfake detection platform. Implemented RESTful APIs, authentication systems, encrypted data handling, optimized relational database models (PostgreSQL/MySQL), and containerized deployment pipelines using Docker.",
-                      image: "https://picsum.photos/seed/cyber-security/800/600",
-                      color: "bg-emerald-500/10",
-                      badges: ["Docker", "PostgreSQL", "Encryption"]
+                      title: "Blaqbonez — Artist Website",
+                      category: "Artist Website",
+                      description: "A bold, immersive website built for Nigerian musician Blaqbonez, featuring his music, story, and contact information.",
+                      image: "/blaqbonez-preview.png",
+                      color: "bg-blue-950/30",
+                      link: "https://blaqbonez-black.vercel.app/",
+                      badges: ["Music", "Artist Branding", "Web Design"]
                     },
                     {
-                      title: "Red Team Automation Toolkit",
-                      category: "Offensive Security Engineering",
-                      description: "Developed automated reconnaissance and privilege escalation scripts using Python and Bash to improve penetration testing efficiency and vulnerability discovery across enterprise networks.",
-                      image: "https://picsum.photos/seed/hacking/800/600",
-                      color: "bg-blue-500/10",
-                      badges: ["Python", "Bash", "Red Team"]
-                    },
-                    {
-                      title: "Secure API Architecture Framework",
-                      category: "Backend Systems Design",
-                      description: "Engineered scalable API systems using Django and FastAPI with JWT authentication, rate limiting, logging, monitoring integrations, and security hardening practices to ensure high availability and data integrity.",
-                      image: "https://picsum.photos/seed/server-security/800/600",
-                      color: "bg-purple-500/10",
-                      badges: ["FastAPI", "JWT", "Scalable"]
+                      title: "Lloyd Tawo — Videographer Portfolio",
+                      category: "Videographer Portfolio",
+                      description: "A cinematic portfolio showcasing the selected work, brand films, and interviews of Nigerian videographer Lloyd Tawo.",
+                      image: "/lloyd-tawo-preview.png",
+                      color: "bg-neutral-800/30",
+                      link: "https://lloydtawomedia.vercel.app/",
+                      badges: ["Videography", "Portfolio", "Visual Storytelling"]
                     }
                   ].map((project, i) => (
                     <motion.div
