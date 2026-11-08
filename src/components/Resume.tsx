@@ -84,8 +84,19 @@ export default function Resume({ onBack }: ResumeProps) {
         <section className="mb-12">
           <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-slate-400 mb-4">Professional Summary</h2>
           <p className="text-lg leading-relaxed text-slate-700">
-            I design and build complete systems — from secure backend architecture and scalable APIs to native/cross-platform mobile apps for iOS and Android using Swift, Objective-C, Flutter, and React Native. I work comfortably across TypeScript, React, Flutter, Python, and Django, building resilient, production-ready systems. My cybersecurity background influences how I architect everything: security-first, scalable, and maintainable from concept to deployment.
+            Full-stack engineer with experience designing, building, and operating secure web and mobile products. I work across TypeScript, React 18, NestJS, Python, PostgreSQL, and AWS, combining modular API architecture and data performance work with polished product interfaces. My cybersecurity background informs how I approach authentication, application security, observability, and production reliability.
           </p>
+        </section>
+
+        <section className="mb-12 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:p-8">
+          <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-slate-400 mb-5">Full-Stack Engineering</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5 text-sm text-slate-700 leading-relaxed">
+            <p><strong className="text-slate-900">Backend architecture:</strong> TypeScript and NestJS services using modular design and dependency injection, with REST and GraphQL APIs.</p>
+            <p><strong className="text-slate-900">Frontend:</strong> React.js 18, TypeScript, Zustand, Ant Design, Storybook, i18next, Styled Components, CSS, HTML, and React Hooks.</p>
+            <p><strong className="text-slate-900">Data:</strong> PostgreSQL relational and JSONB data, complex queries, query optimization, and Redis caching.</p>
+            <p><strong className="text-slate-900">Delivery & operations:</strong> AWS, Docker, Gitflow, GitHub Actions CI/CD, automated testing, deployment, and production monitoring.</p>
+            <p className="md:col-span-2"><strong className="text-slate-900">Quality & security:</strong> Sentry, SonarQube, Auth0, secure API design, authentication, and security-focused development.</p>
+          </div>
         </section>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -99,15 +110,15 @@ export default function Resume({ onBack }: ResumeProps) {
                 </div>
                 <div>
                   <h3 className="text-xs font-bold uppercase text-slate-900 mb-2">Mobile & Frontend</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">iOS (Swift / Objective-C), Android (Kotlin / Java), Flutter, React Native, React, TypeScript, Tailwind CSS</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">iOS (Swift / Objective-C), Android (Kotlin / Java), Flutter, React Native, React.js 18, TypeScript, Zustand, Ant Design, Storybook, i18next, Styled Components, Tailwind CSS</p>
                 </div>
                 <div>
                   <h3 className="text-xs font-bold uppercase text-slate-900 mb-2">Backend</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">Django, FastAPI, Flask</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">NestJS, Node.js, TypeScript, modular architecture, dependency injection, REST, GraphQL, Django, FastAPI, Flask, Python</p>
                 </div>
                 <div>
                   <h3 className="text-xs font-bold uppercase text-slate-900 mb-2">Databases</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">PostgreSQL, MySQL</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">PostgreSQL (relational, JSONB, complex queries, optimization), Redis, MySQL</p>
                 </div>
                 <div>
                   <h3 className="text-xs font-bold uppercase text-slate-900 mb-2">Security Tools</h3>
@@ -115,7 +126,7 @@ export default function Resume({ onBack }: ResumeProps) {
                 </div>
                 <div>
                   <h3 className="text-xs font-bold uppercase text-slate-900 mb-2">Infrastructure</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">Docker, GitHub, Linux, REST APIs, JWT, SIEM</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">AWS, Docker, Gitflow, GitHub Actions, CI/CD, Linux, REST APIs, JWT, Redis, Sentry, SonarQube, Auth0, SIEM</p>
                 </div>
               </div>
             </section>

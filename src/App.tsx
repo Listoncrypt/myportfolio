@@ -29,7 +29,12 @@ const shelfCategories = ["All", "Languages", "Frameworks", "Cloud & DevOps", "Da
 
 const shelfItems: ShelfItem[] = [
   { name: "TypeScript", type: "Language", category: "Languages", icon: <span className="font-mono font-black text-sky-400">TS</span> },
-  { name: "React", type: "Frontend Library", category: "Frameworks", icon: "⚛️" },
+  { name: "React 18", type: "Frontend Library", category: "Frameworks", icon: "⚛️" },
+  { name: "Zustand", type: "State Management", category: "Frameworks", icon: "◉" },
+  { name: "Ant Design", type: "UI Component Library", category: "Frameworks", icon: "◈" },
+  { name: "Storybook", type: "Component Documentation", category: "Frameworks", icon: "📕" },
+  { name: "i18next", type: "Internationalization", category: "Frameworks", icon: "🌐" },
+  { name: "Styled Components", type: "CSS-in-JS", category: "Frameworks", icon: "💅" },
   { name: "Rust", type: "Language", category: "Languages", icon: "🦀" },
   { name: "JavaScript", type: "Language", category: "Languages", icon: <span className="font-mono font-black text-amber-300">JS</span> },
   { name: "Go", type: "Language", category: "Languages", icon: <span className="font-mono font-black text-cyan-400">GO</span> },
@@ -61,6 +66,8 @@ const shelfItems: ShelfItem[] = [
   { name: "Vue / Vuetify", type: "UI Framework", category: "Frameworks", icon: "🟢" },
 
   { name: "Docker", type: "Containers", category: "Cloud & DevOps", icon: "🐳" },
+  { name: "Gitflow", type: "Branching Strategy", category: "Cloud & DevOps", icon: "🌿" },
+  { name: "GitHub Actions", type: "CI/CD Pipelines", category: "Cloud & DevOps", icon: "⚙️" },
   { name: "AWS", type: "Cloud Provider", category: "Cloud & DevOps", icon: "☁️" },
   { name: "Azure", type: "Cloud Provider", category: "Cloud & DevOps", icon: "🔷" },
   { name: "Google Cloud", type: "Cloud Platform", category: "Cloud & DevOps", icon: "☁️" },
@@ -72,6 +79,11 @@ const shelfItems: ShelfItem[] = [
   { name: "Heroku", type: "Cloud PaaS", category: "Cloud & DevOps", icon: "🟣" },
 
   { name: "PostgreSQL", type: "Relational Database", category: "Data & Security", icon: "🐘" },
+  { name: "PostgreSQL JSONB", type: "Relational & JSON Data", category: "Data & Security", icon: "🗂️" },
+  { name: "Redis", type: "Data Caching", category: "Data & Security", icon: "🔴" },
+  { name: "Sentry", type: "Error Monitoring", category: "Data & Security", icon: "🛟" },
+  { name: "SonarQube", type: "Code Quality & Security", category: "Data & Security", icon: "🔎" },
+  { name: "Auth0", type: "Identity & Access", category: "Data & Security", icon: "🔐" },
   { name: "SQLite", type: "Embedded DB", category: "Data & Security", icon: "💾" },
   { name: "Supabase", type: "Backend & Postgres", category: "Data & Security", icon: "⚡" },
   { name: "Prisma", type: "Type-Safe ORM", category: "Data & Security", icon: "◬" },
@@ -326,7 +338,7 @@ export default function App() {
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <h2 className="text-accent font-display font-medium uppercase tracking-[0.2em] text-sm mb-6">
-                    Full-Stack & Mobile Engineer | Graphic Designer | Cybersecurity Analyst
+                    FULL STACK ENGINEER
                   </h2>
                   <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] font-display font-extrabold leading-[0.9] tracking-tighter mb-12">
                     HEY, I'M <br />
@@ -343,7 +355,7 @@ export default function App() {
                 >
                   <div className="max-w-xl">
                     <p className="text-xl md:text-2xl text-fg/80 leading-relaxed font-light">
-                      I design and build complete systems — from secure backend architectures and scalable APIs to native/cross-platform mobile apps, and high-impact graphic design work spanning brand identity, marketing, and visual systems. I’ve collaborated closely with top designers worldwide and bring that visual precision into everything I build.
+                      I design and build complete products — from React and TypeScript interfaces to secure backend services, cloud deployments, and native mobile apps. I bring product thinking, engineering depth, and a security-first mindset to each stage, from the first design decision through production.
                     </p>
                   </div>
 
@@ -374,16 +386,19 @@ export default function App() {
                 </div>
                 <div className="md:col-span-8 space-y-12">
                   <p className="text-2xl md:text-3xl leading-snug font-light">
-                    I am a <span className="text-accent font-medium">Full-Stack & Mobile Engineer</span>, <span className="text-accent font-medium">Graphic Designer</span>, and <span className="text-accent font-medium">Cybersecurity Analyst</span> who enjoys rapidly transforming ideas into functional products. Whether building native mobile applications with <span className="text-accent font-medium">Swift</span>, <span className="text-accent font-medium">Objective-C</span>, and <span className="text-accent font-medium">Kotlin</span>, cross-platform apps with <span className="text-accent font-medium">Flutter</span> and <span className="text-accent font-medium">React Native</span>, crafting brand identities and visual systems alongside top designers globally, or engineering scalable backend infrastructure — I deliver clean, precise solutions from concept to deployment.
+                    I am a <span className="text-accent font-medium">Full-Stack Engineer</span>, <span className="text-accent font-medium">Product Designer</span>, and <span className="text-accent font-medium">Cybersecurity Analyst</span> who works across the product lifecycle. I build responsive frontends with <span className="text-accent font-medium">React 18</span> and <span className="text-accent font-medium">TypeScript</span>, backend APIs with <span className="text-accent font-medium">NestJS</span> and <span className="text-accent font-medium">Python</span>, and native or cross-platform apps with Swift, Kotlin, Flutter, and React Native.
                   </p>
                   <p className="text-2xl md:text-3xl leading-snug font-light">
-                    Currently, I serve as Lead Backend Developer at <span className="text-accent font-medium">Cyber Sentinel</span>, a security-focused project developing deepfake detection systems. I architect and maintain the core backend infrastructure using Django and Flask, ensuring scalability, secure authentication systems, encryption mechanisms, and real-time processing pipelines.
+                    Currently, I serve as Lead Backend Developer at <span className="text-accent font-medium">Cyber Sentinel</span>, a security-focused project developing deepfake detection systems. I architect backend services and secure REST APIs, implement authentication and encryption, optimize PostgreSQL data models, and deploy containerized services with Docker.
                   </p>
                   <p className="text-2xl md:text-3xl leading-snug font-light">
                     Previously, I worked as an Ethical Hacker (Red Team) at <span className="text-accent font-medium">Hakai Security</span>, where I conducted advanced penetration testing across corporate networks, cloud systems, and web applications. I developed automated reconnaissance and privilege escalation scripts in Python and Bash, simulated real-world attack scenarios, and delivered executive-level security reports aligned with compliance frameworks.
                   </p>
                   <p className="text-2xl md:text-3xl leading-snug font-light">
                     My engineering philosophy is simple: build fast, build secure, build systems that scale.
+                  </p>
+                  <p className="text-2xl md:text-3xl leading-snug font-light">
+                    My full-stack toolkit includes modular <span className="text-accent font-medium">NestJS</span> services with dependency injection and REST or GraphQL APIs; React 18 interfaces using Zustand, Ant Design, Storybook, i18next, and Styled Components; and PostgreSQL systems using complex queries, performance tuning, and JSONB data. I work with AWS and containerized deployments, Gitflow, and GitHub Actions CI/CD, with Redis caching and monitoring or identity tools including Sentry, SonarQube, and Auth0.
                   </p>
                 </div>
               </section>
