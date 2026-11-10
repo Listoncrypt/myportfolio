@@ -338,7 +338,7 @@ export default function App() {
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <h2 className="text-accent font-display font-medium uppercase tracking-[0.2em] text-sm mb-6">
-                    FULL STACK ENGINEER
+                    FULL STACK ENGINEER / APPOINTMENT SETTER
                   </h2>
                   <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] font-display font-extrabold leading-[0.9] tracking-tighter mb-12">
                     HEY, I'M <br />

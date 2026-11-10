@@ -61,7 +61,7 @@ export default function Resume({ onBack }: ResumeProps) {
                 UCHENNA <br /> EBUBE DAVID
               </h1>
               <p className="text-xl font-medium text-slate-500 uppercase tracking-widest">
-                Full-Stack & Mobile Engineer (iOS & Android) | Cybersecurity Analyst
+                Full-Stack Engineer | Appointment Setter | Sales Development Representative (SDR)
               </p>
             </div>
             <div className="flex flex-col gap-2 text-sm font-medium text-slate-600">
@@ -84,8 +84,20 @@ export default function Resume({ onBack }: ResumeProps) {
         <section className="mb-12">
           <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-slate-400 mb-4">Professional Summary</h2>
           <p className="text-lg leading-relaxed text-slate-700">
-            Full-stack engineer with experience designing, building, and operating secure web and mobile products. I work across TypeScript, React 18, NestJS, Python, PostgreSQL, and AWS, combining modular API architecture and data performance work with polished product interfaces. My cybersecurity background informs how I approach authentication, application security, observability, and production reliability.
+            Full-stack engineer and sales development professional with experience designing, building, and operating secure web and mobile products, while supporting lead generation and qualified meeting pipelines. I work across TypeScript, React 18, NestJS, Python, PostgreSQL, and AWS, combining modular API architecture and data performance work with thoughtful prospect research, personalized outreach, and clear sales handoffs. My cybersecurity background informs how I approach authentication, application security, observability, and production reliability.
           </p>
+        </section>
+
+        <section className="mb-12 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:p-8">
+          <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-slate-400 mb-5">Appointment Setting & Sales Development</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4 text-sm text-slate-700 leading-relaxed">
+            <p><strong className="text-slate-900">Prospecting:</strong> Research target accounts and identify relevant decision-makers and potential customers.</p>
+            <p><strong className="text-slate-900">Outreach:</strong> Use clear, personalized communication to initiate conversations and build interest.</p>
+            <p><strong className="text-slate-900">Qualification:</strong> Ask discovery questions, understand needs and fit, and prioritize promising leads.</p>
+            <p><strong className="text-slate-900">Meeting setting:</strong> Coordinate calendars and book qualified appointments for sales conversations.</p>
+            <p className="md:col-span-2"><strong className="text-slate-900">Pipeline support:</strong> Maintain timely follow-ups, keep lead records organized, and provide clear context when handing qualified prospects to the sales team.</p>
+            <p className="md:col-span-2"><strong className="text-slate-900">Sales tools & CRM:</strong> Salesforce, HubSpot, Pipedrive, Zoho CRM, Apollo, ZoomInfo, LinkedIn Sales Navigator, Outreach, Salesloft, Calendly, and Aircall.</p>
+          </div>
         </section>
 
         <section className="mb-12 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:p-8">
