@@ -61,7 +61,7 @@ export default function Resume({ onBack }: ResumeProps) {
                 UCHENNA <br /> EBUBE DAVID
               </h1>
               <p className="text-xl font-medium text-slate-500 uppercase tracking-widest">
-                Full-Stack Engineer | Appointment Setter | Sales Development Representative (SDR)
+                AI Developer | Full-Stack Engineer
               </p>
             </div>
             <div className="flex flex-col gap-2 text-sm font-medium text-slate-600">
@@ -84,31 +84,35 @@ export default function Resume({ onBack }: ResumeProps) {
         <section className="mb-12">
           <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-slate-400 mb-4">Professional Summary</h2>
           <p className="text-lg leading-relaxed text-slate-700">
-            Full-stack engineer and sales development professional with experience designing, building, and operating secure web and mobile products, while supporting lead generation and qualified meeting pipelines. I work across TypeScript, React 18, NestJS, Python, PostgreSQL, and AWS, combining modular API architecture and data performance work with thoughtful prospect research, personalized outreach, and clear sales handoffs. My cybersecurity background informs how I approach authentication, application security, observability, and production reliability.
+            AI Developer and full-stack engineer experienced building secure AI backends and multi-role platforms. At Cyber Sentinel, I developed backend services for a deepfake detection system; I also built ALLFIX Services Xpress, a service marketplace with WhatsApp integration. My toolkit includes Next.js, TypeScript, React 18, Supabase with Row Level Security, PostgreSQL, NestJS, Python, and AWS.
           </p>
-        </section>
-
-        <section className="mb-12 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:p-8">
-          <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-slate-400 mb-5">Appointment Setting & Sales Development</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4 text-sm text-slate-700 leading-relaxed">
-            <p><strong className="text-slate-900">Prospecting:</strong> Research target accounts and identify relevant decision-makers and potential customers.</p>
-            <p><strong className="text-slate-900">Outreach:</strong> Use clear, personalized communication to initiate conversations and build interest.</p>
-            <p><strong className="text-slate-900">Qualification:</strong> Ask discovery questions, understand needs and fit, and prioritize promising leads.</p>
-            <p><strong className="text-slate-900">Meeting setting:</strong> Coordinate calendars and book qualified appointments for sales conversations.</p>
-            <p className="md:col-span-2"><strong className="text-slate-900">Pipeline support:</strong> Maintain timely follow-ups, keep lead records organized, and provide clear context when handing qualified prospects to the sales team.</p>
-            <p className="md:col-span-2"><strong className="text-slate-900">Sales tools & CRM:</strong> Salesforce, HubSpot, Pipedrive, Zoho CRM, Apollo, ZoomInfo, LinkedIn Sales Navigator, Outreach, Salesloft, Calendly, and Aircall.</p>
-          </div>
         </section>
 
         <section className="mb-12 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:p-8">
           <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-slate-400 mb-5">Full-Stack Engineering</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5 text-sm text-slate-700 leading-relaxed">
-            <p><strong className="text-slate-900">Backend architecture:</strong> TypeScript and NestJS services using modular design and dependency injection, with REST and GraphQL APIs.</p>
-            <p><strong className="text-slate-900">Frontend:</strong> React.js 18, TypeScript, Zustand, Ant Design, Storybook, i18next, Styled Components, CSS, HTML, and React Hooks.</p>
-            <p><strong className="text-slate-900">Data:</strong> PostgreSQL relational and JSONB data, complex queries, query optimization, and Redis caching.</p>
-            <p><strong className="text-slate-900">Delivery & operations:</strong> AWS, Docker, Gitflow, GitHub Actions CI/CD, automated testing, deployment, and production monitoring.</p>
-            <p className="md:col-span-2"><strong className="text-slate-900">Quality & security:</strong> Sentry, SonarQube, Auth0, secure API design, authentication, and security-focused development.</p>
+            <p><strong className="text-slate-900">AI development:</strong> LLM API integrations and AI-assisted development workflows; backend engineering for an AI deepfake-detection product.</p>
+            <p><strong className="text-slate-900">Backend & access control:</strong> Next.js, TypeScript, NestJS, Supabase, PostgreSQL, Row Level Security, modular services, dependency injection, REST and GraphQL APIs, and multi-role access testing.</p>
+            <p><strong className="text-slate-900">Frontend:</strong> React.js 18, Zustand, Ant Design, Storybook, i18next, Styled Components, CSS, HTML, and React Hooks.</p>
+            <p><strong className="text-slate-900">Data & integrations:</strong> PostgreSQL relational and JSONB data, complex queries, optimization, Redis, Stripe and payment webhooks, WhatsApp, mail and drive integrations, scheduled jobs, and market-data sync.</p>
+            <p className="md:col-span-2"><strong className="text-slate-900">Delivery, quality & security:</strong> AWS, Docker, Gitflow, GitHub Actions CI/CD, automated tests, type checks, security advisories, Sentry, SonarQube, and Auth0.</p>
           </div>
+        </section>
+
+        <section className="mb-12 rounded-2xl border border-slate-200 p-6 md:p-8">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
+            <div>
+              <h2 className="text-lg font-bold text-slate-900">ALLFIX Services Xpress</h2>
+              <p className="text-xs uppercase tracking-[0.2em] text-slate-400 mt-1">Full-Stack Marketplace Platform</p>
+            </div>
+            <a href="https://www.allfixservicexpress.com.ng/" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-emerald-700 hover:underline">View live platform ↗</a>
+          </div>
+          <p className="text-sm leading-relaxed text-slate-700 mb-3">Built a multi-service platform that brings together service requests, verified vendors, property and vehicle listings, and work-gallery discovery.</p>
+          <ul className="text-sm text-slate-700 space-y-2 list-disc pl-5">
+            <li>Integrated WhatsApp contact flows so customers can reach ALLFIX directly from the platform.</li>
+            <li>Designed marketplace journeys for customer service requests, verified provider discovery, and property and vehicle listings.</li>
+            <li>Implemented and checked role-aware workflows for customers and service providers.</li>
+          </ul>
         </section>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -122,15 +126,15 @@ export default function Resume({ onBack }: ResumeProps) {
                 </div>
                 <div>
                   <h3 className="text-xs font-bold uppercase text-slate-900 mb-2">Mobile & Frontend</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">iOS (Swift / Objective-C), Android (Kotlin / Java), Flutter, React Native, React.js 18, TypeScript, Zustand, Ant Design, Storybook, i18next, Styled Components, Tailwind CSS</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">Next.js, React.js 18, TypeScript, Zustand, Ant Design, Storybook, i18next, Styled Components, React Native, Flutter, iOS (Swift / Objective-C), Android (Kotlin / Java)</p>
                 </div>
                 <div>
                   <h3 className="text-xs font-bold uppercase text-slate-900 mb-2">Backend</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">NestJS, Node.js, TypeScript, modular architecture, dependency injection, REST, GraphQL, Django, FastAPI, Flask, Python</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">Next.js, NestJS, Node.js, TypeScript, Supabase, Row Level Security, modular architecture, dependency injection, REST, GraphQL, LLM APIs, Django, FastAPI, Flask, Python</p>
                 </div>
                 <div>
                   <h3 className="text-xs font-bold uppercase text-slate-900 mb-2">Databases</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">PostgreSQL (relational, JSONB, complex queries, optimization), Redis, MySQL</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">PostgreSQL (relational, JSONB, complex queries, optimization), Supabase, Redis, MySQL</p>
                 </div>
                 <div>
                   <h3 className="text-xs font-bold uppercase text-slate-900 mb-2">Security Tools</h3>
@@ -138,7 +142,7 @@ export default function Resume({ onBack }: ResumeProps) {
                 </div>
                 <div>
                   <h3 className="text-xs font-bold uppercase text-slate-900 mb-2">Infrastructure</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">AWS, Docker, Gitflow, GitHub Actions, CI/CD, Linux, REST APIs, JWT, Redis, Sentry, SonarQube, Auth0, SIEM</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">AWS, Docker, Gitflow, GitHub Actions, CI/CD, Stripe webhooks, WhatsApp integrations, scheduled jobs, Linux, REST APIs, JWT, Redis, Sentry, SonarQube, Auth0, SIEM</p>
                 </div>
               </div>
             </section>

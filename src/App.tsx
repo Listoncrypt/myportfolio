@@ -29,6 +29,7 @@ const shelfCategories = ["All", "Languages", "Frameworks", "Cloud & DevOps", "Da
 
 const shelfItems: ShelfItem[] = [
   { name: "TypeScript", type: "Language", category: "Languages", icon: <span className="font-mono font-black text-sky-400">TS</span> },
+  { name: "Next.js", type: "React Framework", category: "Frameworks", icon: <span className="font-mono font-black">N</span> },
   { name: "React 18", type: "Frontend Library", category: "Frameworks", icon: "⚛️" },
   { name: "Zustand", type: "State Management", category: "Frameworks", icon: "◉" },
   { name: "Ant Design", type: "UI Component Library", category: "Frameworks", icon: "◈" },
@@ -338,7 +339,7 @@ export default function App() {
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <h2 className="text-accent font-display font-medium uppercase tracking-[0.2em] text-sm mb-6">
-                    FULL STACK ENGINEER / APPOINTMENT SETTER
+                    AI DEVELOPER / FULL STACK ENGINEER
                   </h2>
                   <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] font-display font-extrabold leading-[0.9] tracking-tighter mb-12">
                     HEY, I'M <br />
@@ -386,7 +387,7 @@ export default function App() {
                 </div>
                 <div className="md:col-span-8 space-y-12">
                   <p className="text-2xl md:text-3xl leading-snug font-light">
-                    I am a <span className="text-accent font-medium">Full-Stack Engineer</span>, <span className="text-accent font-medium">Product Designer</span>, and <span className="text-accent font-medium">Cybersecurity Analyst</span> who works across the product lifecycle. I build responsive frontends with <span className="text-accent font-medium">React 18</span> and <span className="text-accent font-medium">TypeScript</span>, backend APIs with <span className="text-accent font-medium">NestJS</span> and <span className="text-accent font-medium">Python</span>, and native or cross-platform apps with Swift, Kotlin, Flutter, and React Native.
+                    I am a <span className="text-accent font-medium">Full-Stack Engineer</span>, <span className="text-accent font-medium">Product Designer</span>, and <span className="text-accent font-medium">Cybersecurity Analyst</span> who works across the product lifecycle. I build responsive frontends with <span className="text-accent font-medium">React 18</span> and <span className="text-accent font-medium">TypeScript</span>, backend APIs with <span className="text-accent font-medium">NestJS</span> and <span className="text-accent font-medium">Python</span>, and data-backed application features with <span className="text-accent font-medium">PostgreSQL</span> and <span className="text-accent font-medium">Supabase</span>.
                   </p>
                   <p className="text-2xl md:text-3xl leading-snug font-light">
                     Currently, I serve as Lead Backend Developer at <span className="text-accent font-medium">Cyber Sentinel</span>, a security-focused project developing deepfake detection systems. I architect backend services and secure REST APIs, implement authentication and encryption, optimize PostgreSQL data models, and deploy containerized services with Docker.
@@ -398,7 +399,7 @@ export default function App() {
                     My engineering philosophy is simple: build fast, build secure, build systems that scale.
                   </p>
                   <p className="text-2xl md:text-3xl leading-snug font-light">
-                    My full-stack toolkit includes modular <span className="text-accent font-medium">NestJS</span> services with dependency injection and REST or GraphQL APIs; React 18 interfaces using Zustand, Ant Design, Storybook, i18next, and Styled Components; and PostgreSQL systems using complex queries, performance tuning, and JSONB data. I work with AWS and containerized deployments, Gitflow, and GitHub Actions CI/CD, with Redis caching and monitoring or identity tools including Sentry, SonarQube, and Auth0.
+                    My toolkit spans <span className="text-accent font-medium">Next.js</span> and React 18 interfaces; <span className="text-accent font-medium">NestJS</span> services with dependency injection and REST or GraphQL APIs; and <span className="text-accent font-medium">Supabase/PostgreSQL</span> with row-level security, complex queries, and JSONB data. I also work with LLM APIs and AI-assisted development, Stripe and payment webhooks, WhatsApp integrations, mail and drive sync, scheduled jobs, market-data sync, AWS, Docker, Gitflow, GitHub Actions CI/CD, Redis, and multi-role access testing.
                   </p>
                 </div>
               </section>
@@ -421,6 +422,16 @@ export default function App() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {[
+                    {
+                      title: "ALLFIX Services Xpress",
+                      category: "Multi-Service Marketplace",
+                      description: "Built a platform connecting customers with verified service professionals, property and vehicle listings, and request workflows. Integrated WhatsApp to make it easy for customers to contact ALLFIX.",
+                      image: "/allfix-preview.jpg",
+                      objectPosition: "top",
+                      color: "bg-emerald-950/30",
+                      link: "https://www.allfixservicexpress.com.ng/",
+                      badges: ["Marketplace", "WhatsApp Integration", "Multi-Role Platform"]
+                    },
                     {
                       title: "Confirmedit.com – Secure Escrow Platform",
                       category: "Full-Stack Development",
@@ -474,6 +485,7 @@ export default function App() {
                           src={project.image}
                           alt={project.title}
                           className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                          style={{ objectPosition: project.objectPosition ?? "center" }}
                           referrerPolicy="no-referrer"
                         />
                         <div className="absolute inset-0 bg-bg/20 group-hover:bg-transparent transition-colors" />
